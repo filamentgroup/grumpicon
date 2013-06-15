@@ -21,6 +21,16 @@ module.exports = function(grunt) {
         src: ['test/**/*.js']
       },
     },
+    requirejs: {
+      build: {
+        options: {
+          baseUrl: "public/js",
+          mainConfigFile: "public/js/grunticon-ui.js",
+          out: "public/js/grunticon-ui.min.js",
+          name: "grunticon-ui"
+        }
+      }
+    },
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -40,6 +50,7 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.

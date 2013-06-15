@@ -1,0 +1,58 @@
+html,
+body { height: 100% }
+body {
+    background: #fff;
+    -webkit-transition: background .5s ease;
+    -moz-transition: background .5s ease;
+    transition: background .5s ease;
+}
+
+.dragover { background: #e0f0ff }
+
+#file-list,
+#results { display: none }
+
+
+#upload .container { padding: 1em 0 }
+#upload .control-label {
+    font-size: 1.5em;
+    width: 280px;
+    text-align: left;
+    cursor: default;
+}
+#upload .controls { margin-left: 280px }
+#upload h3 {
+    text-align: center;
+    border: 8px dashed #e6e6e6;
+    border-radius: 4px;
+    padding: 1.5em;
+    display: none;
+    -webkit-transition: border-color .5s ease;
+    -moz-transition: border-color .5s ease;
+    transition: border-color .5s ease;
+}
+#upload .files-input,
+#upload [name="mintype"] { display: none }
+#upload .btn-group .btn { width: 35px }
+#upload .btn { width: 95px }
+.blobconstructor #upload h3 { display: block }
+.dragover #upload h3 { border-color: #06c }
+.draganddrop.blobconstructor.filereader #supported { display: none }
+.download-warning { margin: .5em 0 }
+.adownload .download-warning { display: none }
+.invalid {
+    text-decoration: line-through;
+    color: #666;
+}
+.close {
+    color: #f99;
+    float: none;
+    opacity: 1;
+    -webkit-transition: color .5s ease;
+    -moz-transition: color .5s ease;
+    transition: color .5s ease;
+}
+.close:hover {
+    color: #c00;
+    opacity: 1;
+}
