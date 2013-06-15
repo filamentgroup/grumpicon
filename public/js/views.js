@@ -104,44 +104,47 @@ define([
 		* @constructor
 	*/
 	Views.ResultsView = Backbone.View.extend( /** @lends Views.ResultsView */ {
-		initialize: function() {
+		initialize: function(options) {
+			this.template = options.template;
+			this.escapeHtml = options.escapeHtml;
 			this.listenTo(this.collection, "readDone", this.render);
 			this.listenTo(this.collection, "remove", this.render);
 		},
-		svgTemplate: _.template($("#svg-css-template").html()),
-		pngTemplate: _.template($("#png-css-template").html()),
-		fallbackTemplate: _.template($("#fallback-css-template").html()),
-		exampleTemplate: _.template($("#example-html-template").html()),
-		iconTemplate: _.template($("#svg-icons-template").html()),
-		events: {
-			"click #download": "download"
-		},
 		render: function() {
 			var view = this,
-				svgHtml = "",
-				pngHtml = "",
-				fallbackHtml = "",
-				exampleHtml = "",
-				iconHtml = "";
+				html = "";
 
 			$.when.apply(window, view.collection.isRead).done(function(){ 
 					view.collection.each(function(model) {
 						var data = model.toJSON();
-						svgHtml += view.svgTemplate(data);
-						pngHtml += view.pngTemplate(data);
-						fallbackHtml += view.fallbackTemplate(data);
-						exampleHtml += view.exampleTemplate(data);						
-						iconHtml += view.iconTemplate(data);
+						html += view.template(data);
 					});
 
-				view.$("#svg-results").html(svgHtml);
-				view.$("#png-results").html(pngHtml);
-				view.$("#fallback-results").html(fallbackHtml);
-				view.$("#example-html-results").html(exampleHtml.replace(/</g, "&lt;"));
-				view.$("#svg-icons-results").html(iconHtml);
+				if ( view.escapeHtml ) {
+					html = html.replace(/</g, "&lt;");
+				}
+
+				view.$el.html(html);
 				view.$el.fadeIn();
 
 			});
+		}		
+	});
+
+	/** 
+		* The download view shows the download button to get the zip file
+		* @constructor
+	*/
+	Views.DownloadView = Backbone.View.extend( /** @lends Views.DownloadView */ {
+		events: {
+			"click #download": "download"
+		},
+		initialize: function() {
+			this.listenTo(this.collection, "readDone", this.render);
+			this.listenTo(this.collection, "remove", this.render);
+		},
+		render: function() {
+			this.$el.fadeIn();
 		},
 		download: function(e) {
 			e.preventDefault();
@@ -155,9 +158,9 @@ define([
 						{base64: true});
 				});
 
-				zip.file("icons.data.svg.css", view.$("#svg-results").text());
-				zip.file("icons.data.png.css", view.$("#png-results").text());
-				zip.file("icons.fallback.css", view.$("#png-results").text());
+				zip.file("icons.data.svg.css", $("#svg-css-results").text());
+				zip.file("icons.data.png.css", $("#png-css-results").text());
+				zip.file("icons.fallback.css", $("#png-css-results").text());
 				zip.file("grunticon.loader.txt", '<!-- Unicode CSS Loader: place this in the head of your page -->\n<script>\n/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */\nwindow.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};\ngrunticon( [ "/example/output/icons.data.svg.css", "/example/output/icons.data.png.css", "/example/output/icons.fallback.css" ] );</script>\n<noscript><link href="/example/output/icons.fallback.css" rel="stylesheet"></noscript>');
 				zip.file("preview.html", view.$("#example-html-results").html());			
 
@@ -169,4 +172,3 @@ define([
 
 	return Views;
 });
-

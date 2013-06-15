@@ -54,10 +54,21 @@ require([
 				collection: svgFiles
 			});
 
-			new Views.ResultsView({
+			_.each(["#svg-css", "#png-css", "#fallback-css", "#example-html", "#svg-icons"], function( name ) {
+				var escape = name.indexOf("html") > -1;
+				
+				new Views.ResultsView({
+					el: name + "-results",
+					template: _.template($(name + "-template").html()),
+					collection: svgFiles,
+					escapeHtml: escape
+				});	
+			});
+
+			new Views.DownloadView({
 				el: "#results",
 				collection: svgFiles
-			});			
+			});
 
 		} else {
 			alert("Your browser isn't supported.");
