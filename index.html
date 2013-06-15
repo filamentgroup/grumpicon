@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Grunticon UI</title>
+	<title>Grunticon App</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />	
 	<link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="container" role="main">
-		<h1 class="page-header">Grunticon UI</h1>
+		<h1 class="page-header">Grunticon App</h1>
 		
 		<div class="row" id="supported">
 			<div class="span12">
@@ -55,7 +55,7 @@
 					
 					<h3>File Previews</h3>
 					
-					<h4>SVG.css</h4>
+					<h4>icons.data.svg.css</h4>
 					<pre id="svg-results"></pre>
 <script type="text/template" id="svg-css-template">
 .icon-<%= name %> {
@@ -64,7 +64,7 @@
 }
 </script>
 					
-					<h4>PNG.css</h4>
+					<h4>icons.data.png.css</h4>
 					<pre id="png-results"></pre>
 <script type="text/template" id="png-css-template">
 .icon-<%= name %> {
@@ -73,7 +73,7 @@
 }
 </script>
 
-					<h4>Fallback.css</h4>
+					<h4>icons.fallback.css</h4>
 					<pre id="fallback-results"></pre>
 <script type="text/template" id="fallback-css-template">
 .icon-<%= name %> {
@@ -82,8 +82,8 @@
 }
 </script>
 					
-					<h4>Example HTML</h4>
-					<pre id="example-html-results">
+					<h4>preview.html</h4>
+					<pre>
 &lt;!doctype HTML>
 &lt;html>
 	&lt;head>
@@ -96,6 +96,9 @@ grunticon( [ "icons.data.svg.css", "icons.data.png.css", "icons.fallback.css" ] 
 	&lt;noscript>&lt;link href="icons.fallback.css" rel="stylesheet">&lt;/noscript>
 	&lt;/head>
 	&lt;body>
+		<span id="example-html-results"></span>
+	&lt;/body>
+&lt;/html>
 					</pre>
 <script type="text/template" id="example-html-template">
 	<pre><code>.icon-<%= name %>:</code></pre><div class="icon-<%= name %>" style="width: <%= width %>px; height: <%= height %>px"></div><hr/>
