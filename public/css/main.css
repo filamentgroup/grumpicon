@@ -12,6 +12,10 @@ body {
 #file-list,
 #results { display: none }
 
+pre {
+    max-height: 15em;
+    overflow-y: scroll;
+}
 
 #upload .container { padding: 1em 0 }
 
