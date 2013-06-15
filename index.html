@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Grunticon App</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />	
-	<link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
 		
@@ -23,23 +23,22 @@
 		</div>
 		
 		<div class="row" id="upload">
-				<div class="container">
-					<div class="row">
-						<div class="span12">
-							<h3>Drag &amp; drop SVGs</h3>
-						</div>
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						<h3>Drag &amp; drop SVGs</h3>
 					</div>
 				</div>
+			</div>
 		</div>
 	
 		<div class="row">
 			<div class="span12">
 				<div id="file-list">
-					<h3>Files Uploaded</h3>
+					<h3>SVGs Uploaded</h3>
 					<ul>
 						<script type="text/template" id="file-list-template">
 							<li <% !valid && print("class='invalid'") %> >
-								<i class='icon icon-file-alt'></i> 
 								<strong><%= file.name %></strong> (<%= file.type %>) <%= file.size %> bytes
 								<a href='#close' class='close' title='Remove file' data-file='<%= id %>'>
 									<i class='icon icon-remove'></i>
