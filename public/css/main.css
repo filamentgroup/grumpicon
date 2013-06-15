@@ -1,0 +1,44 @@
+html,
+body { height: 100% }
+body {
+    background: #fff;
+    -webkit-transition: background .5s ease;
+    -moz-transition: background .5s ease;
+    transition: background .5s ease;
+}
+
+.dragover { background: #e0f0ff }
+
+#file-list,
+#results { display: none }
+
+pre {
+    max-height: 15em;
+    overflow-y: scroll;
+}
+
+#upload .container { padding: 1em 0 }
+
+#upload h3 {
+    text-align: center;
+    border: 8px dashed #e6e6e6;
+    border-radius: 4px;
+    padding: 1.5em;
+    -webkit-transition: border-color .5s ease;
+    -moz-transition: border-color .5s ease;
+    transition: border-color .5s ease;
+}
+
+.dragover #upload h3 { border-color: #06c }
+
+.draganddrop.blobconstructor.filereader #supported { display: none }
+
+.invalid {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.close {
+    float: none;
+    font-size: 1em;
+}
