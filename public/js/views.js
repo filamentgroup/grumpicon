@@ -124,7 +124,7 @@ define([
 				exampleHtml = "",
 				iconHtml = "";
 
-			$.when(view.collection.isRead).done(function(){ 
+			$.when.apply(window, view.collection.isRead).done(function(){ 
 					view.collection.each(function(model) {
 						var data = model.toJSON();
 						svgHtml += view.svgTemplate(data);
@@ -137,7 +137,7 @@ define([
 				view.$("#svg-results").html(svgHtml);
 				view.$("#png-results").html(pngHtml);
 				view.$("#fallback-results").html(fallbackHtml);
-				view.$("#example-html-results").append(exampleHtml.replace(/</g, "&lt;") + "\n&lt;/body\n>&lt;/html>");
+				view.$("#example-html-results").html(exampleHtml.replace(/</g, "&lt;"));
 				view.$("#svg-icons-results").html(iconHtml);
 				view.$el.fadeIn();
 

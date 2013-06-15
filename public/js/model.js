@@ -5,6 +5,14 @@ define([
 	"canvg"
 ], function( $, _, Backbone, canvg ) {
 	var Model = Backbone.Model.extend({
+		defaults: {
+			file: "",
+			svgDataUri: "data:image/svg+xml;base64,",
+			pngDataUri: "data:image/png;base64,",
+			name: "icon",
+			width: 30,
+			height: 30
+		},
 		initialize: function() {
 			this.deferred = $.Deferred();
 			this.isRead = this.deferred.promise();
@@ -17,7 +25,6 @@ define([
 			var model = this,
 				file = model.get("file"),
 				reader = new FileReader();
-
 			model.set("name", file.name.split(".svg")[0], {
 				silent: true
 			});
@@ -61,7 +68,7 @@ define([
 			this.trigger("readDone");
 		},
 		validateType: function() {
-			return true;
+			return this.get("file").type.indexOf("svg") > -1;
 		}
 	});
 
