@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Grunticon UI</title>
+	<title>Grunticon App</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />	
-	<link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
 		
@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="container" role="main">
-		<h1 class="page-header">Grunticon UI</h1>
+		<h1 class="page-header">Grunticon App</h1>
 		
 		<div class="row" id="supported">
 			<div class="span12">
@@ -23,23 +23,22 @@
 		</div>
 		
 		<div class="row" id="upload">
-				<div class="container">
-					<div class="row">
-						<div class="span12">
-							<h3>Drag &amp; drop SVGs</h3>
-						</div>
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						<h3>Drag &amp; drop SVGs</h3>
 					</div>
 				</div>
+			</div>
 		</div>
 	
 		<div class="row">
 			<div class="span12">
 				<div id="file-list">
-					<h3>Files Uploaded</h3>
+					<h3>SVGs Uploaded</h3>
 					<ul>
 						<script type="text/template" id="file-list-template">
 							<li <% !valid && print("class='invalid'") %> >
-								<i class='icon icon-file-alt'></i> 
 								<strong><%= file.name %></strong> (<%= file.type %>) <%= file.size %> bytes
 								<a href='#close' class='close' title='Remove file' data-file='<%= id %>'>
 									<i class='icon icon-remove'></i>
@@ -55,8 +54,8 @@
 					
 					<h3>File Previews</h3>
 					
-					<h4>SVG.css</h4>
-					<pre id="svg-results"></pre>
+					<h4>icons.data.svg.css</h4>
+					<pre id="svg-css-results"></pre>
 <script type="text/template" id="svg-css-template">
 .icon-<%= name %> {
 	background-image: url('<%= svgDataUri %>');
@@ -64,8 +63,8 @@
 }
 </script>
 					
-					<h4>PNG.css</h4>
-					<pre id="png-results"></pre>
+					<h4>icons.data.png.css</h4>
+					<pre id="png-css-results"></pre>
 <script type="text/template" id="png-css-template">
 .icon-<%= name %> {
 	background-image: url('<%= pngDataUri %>');
@@ -73,8 +72,8 @@
 }
 </script>
 
-					<h4>Fallback.css</h4>
-					<pre id="fallback-results"></pre>
+					<h4>icons.fallback.css</h4>
+					<pre id="fallback-css-results"></pre>
 <script type="text/template" id="fallback-css-template">
 .icon-<%= name %> {
 	background-image: url('<%= name %>.png');
@@ -82,8 +81,8 @@
 }
 </script>
 					
-					<h4>Example HTML</h4>
-					<pre id="example-html-results">
+					<h4>preview.html</h4>
+					<pre>
 &lt;!doctype HTML>
 &lt;html>
 	&lt;head>
@@ -96,6 +95,9 @@ grunticon( [ "icons.data.svg.css", "icons.data.png.css", "icons.fallback.css" ] 
 	&lt;noscript>&lt;link href="icons.fallback.css" rel="stylesheet">&lt;/noscript>
 	&lt;/head>
 	&lt;body>
+		<span id="example-html-results"></span>
+	&lt;/body>
+&lt;/html>
 					</pre>
 <script type="text/template" id="example-html-template">
 	<pre><code>.icon-<%= name %>:</code></pre><div class="icon-<%= name %>" style="width: <%= width %>px; height: <%= height %>px"></div><hr/>
