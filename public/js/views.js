@@ -150,7 +150,9 @@ define([
 				img = zip.folder("png");
 
 				view.collection.each(function(model) {
-					img.file(model.get("name") + ".png", model.get("pngDataUri"), {base64: true});
+					img.file(model.get("name") + ".png",
+						model.get("pngDataUri").replace("data:image/png;base64,","") + "\n",
+						{base64: true});
 				});
 
 				zip.file("icons.data.svg.css", view.$("#svg-results").text());
