@@ -7,7 +7,7 @@ define([
 	var Model = Backbone.Model.extend({
 		defaults: {
 			file: "",
-			svgDataUri: "data:image/svg+xml;base64,",
+			svgDataUri: "data:image/svg+xml;charset=US-ASCII,",
 			pngDataUri: "data:image/png;base64,",
 			name: "icon",
 			width: 30,
@@ -20,37 +20,25 @@ define([
 			this.context = this.canvas.getContext("2d");
 			this.read();
 		},
-		/** read the svg file's content and store it in model.datauri */
+		/** read the svg file's content and store it in model.svgDataUri */
 		read: function() {
 			var model = this,
 				file = model.get("file"),
 				reader = new FileReader();
-			model.set("name", file.name.split(".svg")[0], {
-				silent: true
-			});
+
+			model.set("name", file.name.split(".svg")[0]);
 
 			// read the file's contents and store it in the model.datauri
 			reader.onload = function(e) {
-				model.set("svgDataUri", e.target.result);
-
-				model.drawCanvas();
-			};
-
-			reader.readAsDataURL(file);
-		},
-		drawCanvas: function() {
-			var model = this,
-				reader = new FileReader();
-
-			reader.onload = function(e) {
-				model.set("svgText", e.target.result);
-
-				canvg(model.canvas, model.get("svgText"));
+				model.set("svgDataUri", "data:image/svg+xml;charset=US-ASCII," + escape(e.target.result));
+				// draw the svg on the canvas
+				canvg(model.canvas, e.target.result);
 				model.getDims();
 			};
 
-			reader.readAsText(model.get("file"));			
+			reader.readAsText(file);
 		},
+		/** get the width and height of the icon */
 		getDims: function() {
 			var model = this,
 				img = new Image();
@@ -61,12 +49,14 @@ define([
 			}
 			img.src = model.get("svgDataUri");
 		},
+		/** get datauri of the png version using the canvas */
 		makePngDataURI: function() {
 			var datauri = this.canvas.toDataURL();
 			this.set("pngDataUri", datauri);
 			this.deferred.resolve();
 			this.trigger("readDone");
 		},
+		/** make sure dropped file is a svg */
 		validateType: function() {
 			return this.get("file").type.indexOf("svg") > -1;
 		}
