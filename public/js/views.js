@@ -110,13 +110,28 @@ define([
 			this.listenTo(this.collection, "readDone", this.render);
 			this.listenTo(this.collection, "remove", this.render);
 		},
+		events: {
+			"click .close": "removeFile"
+		},
+		/** remove the file from the collection */
+		removeFile: function(e) {
+			e.preventDefault();
+
+      console.log( $( e.target ) );
+			var cid = $(e.target).closest(".close").data("file"),
+				file = this.collection.get(cid);
+
+      console.log( cid );
+      console.log( file );
+			this.collection.remove(file);
+		},
 		render: function() {
 			var view = this,
 				html = "";
 
 			$.when.apply(window, view.collection.isRead).done(function(){
 					view.collection.each(function(model) {
-						var data = model.toJSON();
+						var data = $.extend(true, {}, model.toJSON(), {id: model.cid});
 						html += view.template(data);
 					});
 
