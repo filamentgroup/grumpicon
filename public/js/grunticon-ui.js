@@ -54,12 +54,12 @@ require([
 				collection: svgFiles
 			});
 
-			_.each(["#svg-css", "#png-css", "#fallback-css", "#example-html", "#svg-icons"], function( name ) {
+			_.each(["svg-css", "png-css", "fallback-css", "example-html", "svg-icons"], function( name ) {
 				var escape = name.indexOf("html") > -1;
 				
 				new Views.ResultsView({
-					el: name + "-results",
-					template: _.template($(name + "-template").html()),
+					el: "#" + name + "-results",
+					template: "templates/" + name + ".html",
 					collection: svgFiles,
 					escapeHtml: escape
 				});
