@@ -14,7 +14,12 @@
 </head>
 <body>
 	<div class="container" role="main">
-		<h1 class="page-header">Grunticon App</h1>
+		<h1 class="page-header">Grunticon App <span class="fg">Brought to you by <a href="http://www.filamentgroup.com"><img src="img/logo_filament-group.png"></a></span></h1>
+		
+		
+		<p>Grunticon makes it easy to use HD-ready (retina) vector illustrations, icons, and background images in your web project without the hassles of spotty browser compatibility. The tool processes a set of SVG files, generates PNG fallback images for legacy browsers, and exports a demo page showing how to use the final icons. Visit the <a href="https://github.com/filamentgroup/grunticon">GitHub repo</a> for the command line version or to learn more about how grunticon works</p>
+
+		<p>To start, export SVG files for each image, drop them into the box below, then click the 'Download zip" button to grab the files.</p>
 		
 		<div class="row" id="supported">
 			<div class="span12">
@@ -25,15 +30,20 @@
 		<div class="row" id="upload">
 			<div class="container">
 				<div class="row">
-					<div class="span12">
-						<h3>Drag &amp; drop SVGs</h3>
+					<div class="span9">
+						<h3>Drag &amp; drop SVGs here...</h3>
+					</div>
+					<div class="span3">
+							<a href="#" class="btn btn-success btn-large" id="download">Download Grunticons </a>
 					</div>
 				</div>
 			</div>
 		</div>
-	
+		
+		
 		<div class="row">
 			<div class="span12">
+				
 				<div id="file-list">
 					<h3>SVGs Uploaded</h3>
 					<ul>
@@ -41,18 +51,32 @@
 							<li <% !valid && print("class='invalid'") %> >
 								<strong><%= file.name %></strong> (<%= file.type %>) <%= file.size %> bytes
 								<a href='#close' class='close' title='Remove file' data-file='<%= id %>'>
-									<i class='icon icon-remove'></i>
-								</a>
+					                <i class='icon icon-remove'></i>
+					              </a>
 							</li>
 						</script>
 					</ul>
 				</div>
 				<div id="results">
-					<h3>Grunticon Results</h3>
 					
-					<a href="#" class="btn btn-primary" id="download"><i class="icon icon-download icon-white"></i> Download it!</a>
 					
-					<h3>File Previews</h3>
+					<h3>Image Preview</h3>
+					<div id="svg-icons-results"></div>
+					<script type="text/template" id="svg-icons-template">
+						<div>
+							<div class="meta">
+								<h5><%= name %></h5>
+								<p><%= file.size %> bytes<p>
+							</div>
+							<img src="<%= svgDataUri %>" alt="" />
+							<a href='#close' class='close' title='Remove file' data-file='<%= id %>'>
+				                <i class='icon icon-remove'></i> Remove
+				              </a>
+						</div>
+					</script>
+					
+					
+					<h3>Export Preview</h3>
 					
 					<h4>icons.data.svg.css</h4>
 					<pre id="svg-css-results"></pre>
@@ -102,17 +126,6 @@ grunticon( [ "icons.data.svg.css", "icons.data.png.css", "icons.fallback.css" ] 
 <script type="text/template" id="example-html-template">
 	<pre><code>.icon-<%= name %>:</code></pre><div class="icon-<%= name %>" style="width: <%= width %>px; height: <%= height %>px"></div><hr/>
 </script>
-					<h4>SVGs!</h4>
-					<div id="svg-icons-results"></div>
-					<script type="text/template" id="svg-icons-template">
-						<div>
-							<h5><%= name %></h5>
-							<img src="<%= svgDataUri %>" alt="" />
-              <a href='#close' class='close' title='Remove file' data-file='<%= id %>'>
-                <i class='icon icon-remove'></i>
-              </a>
-						</div>
-					</script>
 				</div>
 			</div>
 		</div>
