@@ -7,7 +7,7 @@ define([
 	/** @namespace */
 	var Views = {};
 
-	/** 
+	/**
 		* The upload view handles the interaction between the file drag and drop and the file input button.
 		* @constructor
 	*/
@@ -51,7 +51,7 @@ define([
 			this.$("body").removeClass("dragover");
 		},
 		/** Handle files selected from the file input */
-		fileUpload: function(e)	{
+		fileUpload: function(e) {
 			this.addFiles(e.target.files);
 		},
 		/** Highlight the page's background on drag over */
@@ -67,7 +67,7 @@ define([
 		}
 	});
 
-	/** 
+	/**
 		* The files view shows the list of svgs "uploaded"
 		* @constructor
 	*/
@@ -99,7 +99,7 @@ define([
 		}
 	});
 
-	/** 
+	/**
 		* The results view shows previews of the files and the download button
 		* @constructor
 	*/
@@ -114,7 +114,7 @@ define([
 			var view = this,
 				html = "";
 
-			$.when.apply(window, view.collection.isRead).done(function(){ 
+			$.when.apply(window, view.collection.isRead).done(function(){
 					view.collection.each(function(model) {
 						var data = model.toJSON();
 						html += view.template(data);
@@ -128,10 +128,10 @@ define([
 				view.$el.fadeIn();
 
 			});
-		}		
+		}
 	});
 
-	/** 
+	/**
 		* The download view shows the download button to get the zip file
 		* @constructor
 	*/

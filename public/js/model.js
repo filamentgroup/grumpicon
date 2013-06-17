@@ -46,7 +46,7 @@ define([
 				model.set("width", img.width );
 				model.set("height", img.height );
 				model.makePngDataURI();
-			}
+			};
 			img.src = model.get("svgDataUri");
 		},
 		/** get datauri of the png version using the canvas */

@@ -62,7 +62,7 @@ require([
 					template: _.template($(name + "-template").html()),
 					collection: svgFiles,
 					escapeHtml: escape
-				});	
+				});
 			});
 
 			new Views.DownloadView({
