@@ -67,15 +67,7 @@ define([
 		}
 	});
 
-	/**
-		* The files view shows the list of svgs "uploaded"
-		* @constructor
-	*/
-	Views.FilesView = Backbone.View.extend( /** @lends Views.FilesView */ {
-		template: _.template($("#file-list-template").html()),
-		initialize: function() {
-			this.listenTo(this.collection, "all", this.render);
-		},
+	Views.ListView = Backbone.View.extend({
 		events: {
 			"click .close": "removeFile"
 		},
@@ -87,6 +79,16 @@ define([
 				file = this.collection.get(cid);
 
 			this.collection.remove(file);
+		}
+	});
+	/**
+		* The files view shows the list of svgs "uploaded"
+		* @constructor
+	*/
+	Views.FilesView = Views.ListView.extend( /** @lends Views.FilesView */ {
+		template: _.template($("#file-list-template").html()),
+		initialize: function() {
+			this.listenTo(this.collection, "all", this.render);
 		},
 		render: function() {
 			var view = this,
@@ -103,27 +105,12 @@ define([
 		* The results view shows previews of the files and the download button
 		* @constructor
 	*/
-	Views.ResultsView = Backbone.View.extend( /** @lends Views.ResultsView */ {
+	Views.ResultsView = Views.ListView.extend( /** @lends Views.ResultsView */ {
 		initialize: function(options) {
 			this.template = options.template;
 			this.escapeHtml = options.escapeHtml;
 			this.listenTo(this.collection, "readDone", this.render);
 			this.listenTo(this.collection, "remove", this.render);
-		},
-		events: {
-			"click .close": "removeFile"
-		},
-		/** remove the file from the collection */
-		removeFile: function(e) {
-			e.preventDefault();
-
-      console.log( $( e.target ) );
-			var cid = $(e.target).closest(".close").data("file"),
-				file = this.collection.get(cid);
-
-      console.log( cid );
-      console.log( file );
-			this.collection.remove(file);
 		},
 		render: function() {
 			var view = this,
