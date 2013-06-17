@@ -7,7 +7,27 @@ body {
     transition: background .5s ease;
 }
 
-.dragover { background: #e0f0ff }
+.dragover { background: rgba(0,0,0,.1) }
+
+.drop-note {
+	display:none;
+}
+
+.dragover .drop-note {
+	position:absolute;
+	bottom:0;
+	left:0;
+	display:block;
+	width:100%;
+	background-color:rgba(0,0,0,.7);
+	color:#fff;
+	font-size:1.6em;
+	text-align:center;
+	padding:.1em;
+}
+.dragover .drop-note h3 {
+	margin:.2em;
+}
 
 #file-list,
 #results,
@@ -45,7 +65,6 @@ pre {
 
 #upload h3 {
     text-align: center;
-    border: 1px dashed #aaa;
     border-radius: 5px;
     padding: 1.5em;
 	margin-top:.5em;
