@@ -10,7 +10,8 @@ body {
 .dragover { background: #e0f0ff }
 
 #file-list,
-#results { display: none }
+#results,
+#download-btn{ display: none }
 
 pre {
     max-height: 15em;
@@ -67,7 +68,7 @@ pre {
 }
 
 #download {
-	margin-top:1.9em;
+	margin-top:.5em;
 	font-size:2em;
 	line-height:120%;
 	font-weight:bold;

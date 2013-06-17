@@ -138,15 +138,18 @@ define([
 		* @constructor
 	*/
 	Views.DownloadView = Backbone.View.extend( /** @lends Views.DownloadView */ {
-		events: {
-			"click #download": "download"
-		},
 		initialize: function() {
 			this.listenTo(this.collection, "readDone", this.render);
 			this.listenTo(this.collection, "remove", this.render);
 		},
 		render: function() {
 			this.$el.fadeIn();
+		}
+	});
+
+	Views.DownloadBtnView = Views.DownloadView.extend( /** @lends Views.DownloadView */ {
+		events: {
+			"click #download": "download"
 		},
 		download: function(e) {
 			e.preventDefault();

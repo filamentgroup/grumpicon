@@ -70,6 +70,12 @@ require([
 				collection: svgFiles
 			});
 
+			new Views.DownloadBtnView({
+				el: "#download-btn",
+				collection: svgFiles
+			});
+
+
 		} else {
 			alert("Your browser isn't supported.");
 		}
