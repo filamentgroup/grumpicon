@@ -17,9 +17,10 @@
 
 ### Getting Started
 
-1. Install grunticon-app: `npm install grunticon-app`
+1. Clone repository: `git clone https://github.com/filamentgroup/grunticon-app`
+2. Install Dependencies: `npm install`
 2. Run the app: `node app.js`
-3. Open a browser and navigate to `localhost:3000`
+3. Open a browser and navigate to `localhost:5000`
 4. Drag svgs into the app
 
 More documentation is available on the [Grunticon task page](https://github.com/filamentgroup/grunticon/).
