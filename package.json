@@ -31,10 +31,12 @@
   "devDependencies": {
     "grunt-contrib-jshint": "~0.1.1",
     "grunt-contrib-nodeunit": "~0.1.2",
-    "grunt-contrib-watch": "~0.2.0",
-    "grunt": "~0.4.1",
-    "express": "~3.2.6",
-    "grunt-contrib-requirejs": "~0.4.1"
+    "grunt-contrib-watch": "~0.2.0"
   },
+  "dependencies":{
+    "express": "~3.2.6",
+    "grunt": "~0.4.1",
+    "grunt-contrib-requirejs": "~0.4.1"
+  }
   "keywords": []
 }
