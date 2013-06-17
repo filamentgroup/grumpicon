@@ -22,18 +22,21 @@
   ],
   "main": "lib/grunticon-app",
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 0.8.0",
+    "npm": "1.2.x"
   },
   "scripts": {
     "test": "grunt nodeunit"
   },
+  "dependencies":{
+    "express": "~3.2.6",
+    "grunt": "~0.4.1",
+    "grunt-contrib-requirejs": "~0.4.1"
+  },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.1.1",
     "grunt-contrib-nodeunit": "~0.1.2",
-    "grunt-contrib-watch": "~0.2.0",
-    "grunt": "~0.4.1",
-    "express": "~3.2.6",
-    "grunt-contrib-requirejs": "~0.4.1"
+    "grunt-contrib-watch": "~0.2.0"
   },
   "keywords": []
 }
