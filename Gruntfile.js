@@ -31,6 +31,16 @@ module.exports = function(grunt) {
         }
       }
     },
+    jst: {
+      compile: {
+        options: {
+          amd: true
+        },
+        files: {
+          "public/js/templates.js": "templates/**/*.html"
+        }
+      }
+    },
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -51,6 +61,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-jst');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.

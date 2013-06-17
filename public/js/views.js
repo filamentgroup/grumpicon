@@ -2,8 +2,9 @@ define([
 	"jquery",
 	"underscore",
 	"backbone",
-	"jszip"
-], function( $, _, Backbone, JSZip) {
+	"jszip",
+	"templates"
+], function( $, _, Backbone, JSZip, JST) {
 	/** @namespace */
 	var Views = {};
 
@@ -72,7 +73,7 @@ define([
 		* @constructor
 	*/
 	Views.FilesView = Backbone.View.extend( /** @lends Views.FilesView */ {
-		template: _.template($("#file-list-template").html()),
+		template: "templates/file-list.html",
 		initialize: function() {
 			this.listenTo(this.collection, "all", this.render);
 		},
@@ -92,7 +93,7 @@ define([
 			var view = this,
 				html = [];
 			this.collection.each(function(model) {
-				html.push(view.template($.extend(true, {}, model.toJSON(), {id: model.cid, valid: model.validateType()})));
+				html.push(JST[view.template]($.extend(true, {}, model.toJSON(), {id: model.cid, valid: model.validateType()})));
 			});
 			this.$("ul").html(html.join(""));
 			this.$el.fadeIn();
@@ -117,7 +118,7 @@ define([
 			$.when.apply(window, view.collection.isRead).done(function(){ 
 					view.collection.each(function(model) {
 						var data = model.toJSON();
-						html += view.template(data);
+						html += JST[view.template](data);
 					});
 
 				if ( view.escapeHtml ) {
