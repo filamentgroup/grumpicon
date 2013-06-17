@@ -68,19 +68,7 @@ define([
 		}
 	});
 
-<<<<<<< HEAD
-	/** 
-		* The files view shows the list of svgs "uploaded"
-		* @constructor
-	*/
-	Views.FilesView = Backbone.View.extend( /** @lends Views.FilesView */ {
-		template: "templates/file-list.html",
-		initialize: function() {
-			this.listenTo(this.collection, "all", this.render);
-		},
-=======
 	Views.ListView = Backbone.View.extend({
->>>>>>> 35065171b4ddfb373ab1052849472a34f4ce388f
 		events: {
 			"click .close": "removeFile"
 		},
@@ -99,7 +87,7 @@ define([
 		* @constructor
 	*/
 	Views.FilesView = Views.ListView.extend( /** @lends Views.FilesView */ {
-		template: _.template($("#file-list-template").html()),
+		template: "templates/file-list.html",
 		initialize: function() {
 			this.listenTo(this.collection, "all", this.render);
 		},
@@ -131,13 +119,8 @@ define([
 
 			$.when.apply(window, view.collection.isRead).done(function(){
 					view.collection.each(function(model) {
-<<<<<<< HEAD
-						var data = model.toJSON();
-						html += JST[view.template](data);
-=======
 						var data = $.extend(true, {}, model.toJSON(), {id: model.cid});
-						html += view.template(data);
->>>>>>> 35065171b4ddfb373ab1052849472a34f4ce388f
+						html += JST[view.template](data);
 					});
 
 				if ( view.escapeHtml ) {
