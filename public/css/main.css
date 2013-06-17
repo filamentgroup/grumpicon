@@ -44,14 +44,13 @@ pre {
 
 #upload h3 {
     text-align: center;
-    border: 3px dashed #ccc;
+    border: 1px dashed #aaa;
     border-radius: 5px;
     padding: 1.5em;
 	margin-top:.5em;
-	background-color: #fefefe;
-	-moz-box-shadow:    inset 0 0 30px rgba(0,0,0,.18);
-	-webkit-box-shadow: inset 0 0 30px rgba(0,0,0,.18);
-	box-shadow:         inset 0 0 40px rgba(0,0,0,.12);
+	-moz-box-shadow:    inset 0 0 20px rgba(0,0,0,.18);
+	-webkit-box-shadow: inset 0 0 20px rgba(0,0,0,.18);
+	box-shadow:         inset 0 0 20px rgba(0,0,0,.12);
     -webkit-transition: border-color .5s ease;
     -moz-transition: border-color .5s ease;
     transition: border-color .5s ease;
