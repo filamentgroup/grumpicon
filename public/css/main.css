@@ -7,10 +7,167 @@ body {
     transition: background .5s ease;
 }
 
+
+.logo {
+	width: 22em;
+	height: 21em;
+	max-height: none;
+	overflow: hidden;
+	margin: 2em auto 0;
+	font-size: 1.2em;
+	position: relative;
+}
+.logo>i {
+	font-size: 1.4em;
+	position: absolute;
+	top: 7em;
+	width: 4em;
+	height: 4em;
+	border-radius: 100%;
+	background: black;
+	left: 5.5em;
+}
+.logo>i>i {
+	font-size: 1em;
+	position: absolute;
+	top: .5em;
+	width: 3em;
+	height: 3em;
+	border-radius: 100%;
+	background: blue;
+	left: .5em;
+}
+.logo>i>i>i {
+	position: absolute;
+	top: .55em;
+	width: 1em;
+	height: 1em;
+	border-radius: 100%;
+	background: yellow;
+	left: .55em;
+	border: solid .5em red;
+}
+.logo .two {
+	display: none;
+}
+.logo:hover .one {
+	display: none;
+}
+.logo:hover .two {
+	display: inline;
+}
+
+
+
+@-moz-keyframes blinkout {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+}
+@-o-keyframes blinkout {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blinkout {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+}
+@-ms-keyframes blinkout {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+}
+@keyframes blinkout {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+}
+
+.logo .one {
+   -webkit-animation: blinkout 5s infinite;
+   -moz-animation: blinkout 5s infinite;
+   -ms-animation: blinkout 5s infinite;
+   -o-animation: blinkout 5s infinite;
+   animation: blinkout 5s infinite;
+}
+
+
+.instructions {
+	text-align: center;
+	font-family: monospace;
+	font-size: 1.8em;
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2016.0.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20width%3D%2246.753px%22%20height%3D%2266.234px%22%20viewBox%3D%220%200%2046.753%2066.234%22%20enable-background%3D%22new%200%200%2046.753%2066.234%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20d%3D%22M37.1%2C57.272%0D%0A%09c-1.077-21.275-16.541-34.158-24.017-46.09%22/%3E%0D%0A%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20stroke-width%3D%222%22%20stroke-miterlimit%3D%2210%22%20d%3D%22M22.253%2C9.475c-2.547%2C0-10.835-2.749-12.808-0.005%0D%0A%09C7.225%2C12.561%2C8.28%2C22.578%2C8.28%2C28.252%22/%3E%0D%0A%3C/svg%3E%0D%0A');
+	background-position: right top;
+	background-repeat: no-repeat;
+	padding-right: 1em;
+	width: 60%;
+	margin: 0 auto;
+	padding-top: 1em;
+	overflow: visible;
+}
+
+.by {
+	font-family: sans-serif;
+	width: 20em;
+	font-size: 1em;
+	margin: 3em auto;
+	text-align: center;
+
+}
+.fg a {
+	display: block;
+	margin: .5em 0 0;
+}
+.fg a img {
+	margin: 0;
+}
+.witheric {
+	color: #000;
+	display: block;
+}
 .dragover { background: rgba(0,0,0,.1) }
 
 .drop-note {
 	display:none;
+}
+
+.wat {
+	position: fixed;
+	top: 0;
+	right: 2em;
+
 }
 
 .dragover .drop-note {
@@ -28,6 +185,8 @@ body {
 .dragover .drop-note h3 {
 	margin:.2em;
 }
+
+
 
 #file-list,
 #results,
