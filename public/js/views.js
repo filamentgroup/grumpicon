@@ -8,7 +8,7 @@ define([
 	/** @namespace */
 	var Views = {};
 
-	/** 
+	/**
 		* The upload view handles the interaction between the file drag and drop and the file input button.
 		* @constructor
 	*/
@@ -52,7 +52,7 @@ define([
 			this.$("body").removeClass("dragover");
 		},
 		/** Handle files selected from the file input */
-		fileUpload: function(e)	{
+		fileUpload: function(e) {
 			this.addFiles(e.target.files);
 		},
 		/** Highlight the page's background on drag over */
@@ -68,6 +68,7 @@ define([
 		}
 	});
 
+<<<<<<< HEAD
 	/** 
 		* The files view shows the list of svgs "uploaded"
 		* @constructor
@@ -77,6 +78,9 @@ define([
 		initialize: function() {
 			this.listenTo(this.collection, "all", this.render);
 		},
+=======
+	Views.ListView = Backbone.View.extend({
+>>>>>>> 35065171b4ddfb373ab1052849472a34f4ce388f
 		events: {
 			"click .close": "removeFile"
 		},
@@ -88,6 +92,16 @@ define([
 				file = this.collection.get(cid);
 
 			this.collection.remove(file);
+		}
+	});
+	/**
+		* The files view shows the list of svgs "uploaded"
+		* @constructor
+	*/
+	Views.FilesView = Views.ListView.extend( /** @lends Views.FilesView */ {
+		template: _.template($("#file-list-template").html()),
+		initialize: function() {
+			this.listenTo(this.collection, "all", this.render);
 		},
 		render: function() {
 			var view = this,
@@ -100,11 +114,11 @@ define([
 		}
 	});
 
-	/** 
+	/**
 		* The results view shows previews of the files and the download button
 		* @constructor
 	*/
-	Views.ResultsView = Backbone.View.extend( /** @lends Views.ResultsView */ {
+	Views.ResultsView = Views.ListView.extend( /** @lends Views.ResultsView */ {
 		initialize: function(options) {
 			this.template = options.template;
 			this.escapeHtml = options.escapeHtml;
@@ -115,10 +129,15 @@ define([
 			var view = this,
 				html = "";
 
-			$.when.apply(window, view.collection.isRead).done(function(){ 
+			$.when.apply(window, view.collection.isRead).done(function(){
 					view.collection.each(function(model) {
+<<<<<<< HEAD
 						var data = model.toJSON();
 						html += JST[view.template](data);
+=======
+						var data = $.extend(true, {}, model.toJSON(), {id: model.cid});
+						html += view.template(data);
+>>>>>>> 35065171b4ddfb373ab1052849472a34f4ce388f
 					});
 
 				if ( view.escapeHtml ) {
@@ -129,23 +148,26 @@ define([
 				view.$el.fadeIn();
 
 			});
-		}		
+		}
 	});
 
-	/** 
+	/**
 		* The download view shows the download button to get the zip file
 		* @constructor
 	*/
 	Views.DownloadView = Backbone.View.extend( /** @lends Views.DownloadView */ {
-		events: {
-			"click #download": "download"
-		},
 		initialize: function() {
 			this.listenTo(this.collection, "readDone", this.render);
 			this.listenTo(this.collection, "remove", this.render);
 		},
 		render: function() {
 			this.$el.fadeIn();
+		}
+	});
+
+	Views.DownloadBtnView = Views.DownloadView.extend( /** @lends Views.DownloadView */ {
+		events: {
+			"click #download": "download"
 		},
 		download: function(e) {
 			e.preventDefault();
