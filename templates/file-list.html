@@ -1,0 +1,6 @@
+<li <% !valid && print("class='invalid'") %> >
+	<strong><%= file.name %></strong> (<%= file.type %>) <%= file.size %> bytes
+	<a href='#close' class='close' title='Remove file' data-file='<%= id %>'>
+		<i class='icon icon-remove'></i>
+	</a>
+</li>

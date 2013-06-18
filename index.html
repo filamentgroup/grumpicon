@@ -62,16 +62,7 @@
 				
 				<div id="file-list">
 					<h3>SVGs Uploaded</h3>
-					<ul>
-						<script type="text/template" id="file-list-template">
-							<li <% !valid && print("class='invalid'") %> >
-								<strong><%= file.name %></strong> (<%= file.type %>) <%= file.size %> bytes
-								<a href='#close' class='close' title='Remove file' data-file='<%= id %>'>
-					                <i class='icon icon-remove'></i>
-					              </a>
-							</li>
-						</script>
-					</ul>
+					<ul></ul>
 				</div>
 				<div id="results">
 					
@@ -96,30 +87,12 @@
 					
 					<h4>icons.data.svg.css</h4>
 					<pre id="svg-css-results"></pre>
-<script type="text/template" id="svg-css-template">
-.icon-<%= name %> {
-	background-image: url('<%= svgDataUri %>');
-	background-repeat: no-repeat;
-}
-</script>
 					
 					<h4>icons.data.png.css</h4>
 					<pre id="png-css-results"></pre>
-<script type="text/template" id="png-css-template">
-.icon-<%= name %> {
-	background-image: url('<%= pngDataUri %>');
-	background-repeat: no-repeat;
-}
-</script>
 
 					<h4>icons.fallback.css</h4>
 					<pre id="fallback-css-results"></pre>
-<script type="text/template" id="fallback-css-template">
-.icon-<%= name %> {
-	background-image: url('png/<%= name %>.png');
-	background-repeat: no-repeat;
-}
-</script>
 					
 					<h4>preview.html</h4>
 					<pre id="preview-html">
@@ -139,9 +112,6 @@ grunticon( [ "icons.data.svg.css", "icons.data.png.css", "icons.fallback.css" ] 
 	&lt;/body>
 &lt;/html>
 					</pre>
-<script type="text/template" id="example-html-template">
-	<pre><code>.icon-<%= name %>:</code></pre><div class="icon-<%= name %>" style="width: <%= width %>px; height: <%= height %>px"></div><hr/>
-</script>
 				</div>
 			</div>
 		</div>
