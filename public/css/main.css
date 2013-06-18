@@ -151,7 +151,7 @@ a {
 	color: #ccc;
 	padding:1.5em 2em;
 	background-color: #999;
-	margin-top: 7em;
+	margin-top: 9em;
 	text-align: center;
 	margin-left:-1em;
 }
@@ -357,7 +357,7 @@ h3 {
 	margin:0;
 }
 #svg-icons-results .meta p {
-	margin:-.3em 0 .5em 0;
+	margin: 0 0 .5em 0;
 	color: #888;
 	font-size:.8em;
 }
