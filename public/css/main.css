@@ -153,7 +153,10 @@ body {
 	margin: .5em 0 0;
 }
 .fg a img {
-	margin: 0;
+	margin: 0 auto;
+	background:#247201;
+	padding: .5em;
+	max-width: 12em;
 }
 .witheric {
 	color: #000;
