@@ -178,7 +178,7 @@ a {
 	position: fixed;
 	top: 0;
 	right: 2em;
-
+	font-family: arial, san-serif;
 }
 
 .dragover .drop-note {
@@ -334,6 +334,7 @@ h3 {
 }
 #svg-icons-results {
 	margin-bottom:2em;
+	margin-top:6em;
 }
 #svg-icons-results div {
 	background-color:#eee;
@@ -352,21 +353,25 @@ h3 {
 	width:30%;
 	padding:0;
 	vertical-align:top;	
+	font-family: arial, san-serif;
 }
 #svg-icons-results .meta h5 {
 	margin:0;
+	
 }
 #svg-icons-results .meta p {
-	margin: 0 0 .5em 0;
+	margin: .1em 0 .5em 0;
 	color: #888;
-	font-size:.8em;
+	font-size:.7em;
 }
 #svg-icons-results .close {
+	font-family: arial, san-serif;
     float: right;
     font-size: 1em;
-	margin-top:.7em;
-	font-size:.9em;
+	margin-top:.6em;
+	font-size:.8em;
 	padding-right:1em;
+	color:#bbb;
 }
 #svg-icons-results img {
 	display: inline-block;
