@@ -1,5 +1,8 @@
 html,
-body { height: 100% }
+body { 
+	height: 100%;
+	font-family: monospace; 
+}
 body {
     background: #fff;
     -webkit-transition: background .5s ease;
@@ -139,7 +142,6 @@ body {
 }
 
 .by {
-	font-family: sans-serif;
 	width: 20em;
 	font-size: 1em;
 	margin: 3em auto;
@@ -161,6 +163,17 @@ body {
 
 .drop-note {
 	display:none;
+}
+
+#download-btn a {
+	width: 20em;
+	font-size: 1.6em;
+	padding: 1em 1.5em;
+	border: 2px solid dotted;
+	background: #222;
+	color: #fff;
+	margin: 1em auto;
+	display: block;
 }
 
 .wat {
