@@ -26,6 +26,62 @@ a:hover, a:active {
 	font-size: 1.2em;
 	position: relative;
 }
+
+@-moz-keyframes movingtarget {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+   margin-left: 2em;
+  }
+  100% {
+   margin-left: 0;
+  }
+}
+@-o-keyframes movingtarget {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+   margin-left: 2em;
+  }
+  100% {
+   margin-left: 0;
+  }
+}
+@-webkit-keyframes movingtarget {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+   margin-left: 2em;
+  }
+  100% {
+   margin-left: 0;
+  }
+}
+@-ms-keyframes movingtarget {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+   margin-left: 2em;
+  }
+  100% {
+   margin-left: 0;
+  }
+}
+@keyframes movingtarget {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+   margin-left: 2em;
+  }
+  100% {
+   margin-left: 0;
+  }
+}
 .logo>i {
 	font-size: 1.4em;
 	position: absolute;
@@ -34,7 +90,12 @@ a:hover, a:active {
 	height: 4em;
 	border-radius: 100%;
 	background: black;
-	left: 5.5em;
+	left: 4em;
+	 -webkit-animation: movingtarget 9s infinite;
+	   -moz-animation: movingtarget 9s infinite;
+	   -ms-animation: movingtarget 9s infinite;
+	   -o-animation: movingtarget 9s infinite;
+	   animation: movingtarget 9s infinite;
 }
 .logo>i>i {
 	font-size: 1em;
@@ -48,12 +109,12 @@ a:hover, a:active {
 }
 .logo>i>i>i {
 	position: absolute;
-	top: .55em;
+	top: .5em;
 	width: 1em;
 	height: 1em;
 	border-radius: 100%;
 	background: yellow;
-	left: .55em;
+	left: .5em;
 	border: solid .5em red;
 }
 
