@@ -16,9 +16,7 @@ define([
 		events: {
 			"drop": "fileDrop",
 			"dragover": "highlight",
-			"dragleave": "highlightOff",
-			"click #fake-files": "triggerFiles",
-			"change .files-input": "fileUpload"
+			"dragleave": "highlightOff"
 		},
 		/**
 			* Add a list of files to the file collection
@@ -38,11 +36,6 @@ define([
 			}
 			this.collection.add(files);
 		},
-		/** Manually trigger the file input to open up the "Browse file" dialog	*/
-		triggerFiles: function(e) {
-			e.preventDefault();
-			this.$(".files-input")[0].click();
-		},
 		/** Handle dropped files */
 		fileDrop: function(e) {
 			e.preventDefault();
@@ -50,10 +43,6 @@ define([
 
 			this.addFiles(e.originalEvent.dataTransfer.files);
 			this.$("body").removeClass("dragover");
-		},
-		/** Handle files selected from the file input */
-		fileUpload: function(e) {
-			this.addFiles(e.target.files);
 		},
 		/** Highlight the page's background on drag over */
 		highlight: function(e) {
@@ -82,23 +71,26 @@ define([
 			this.collection.remove(file);
 		}
 	});
+
 	/**
-		* The files view shows the list of svgs "uploaded"
+		* A toggle view takes a "button" and toggles open/closed another area
 		* @constructor
 	*/
-	Views.FilesView = Views.ListView.extend( /** @lends Views.FilesView */ {
-		template: "templates/file-list.html",
-		initialize: function() {
-			this.listenTo(this.collection, "all", this.render);
-		},
-		render: function() {
-			var view = this,
-				html = [];
-			this.collection.each(function(model) {
-				html.push(JST[view.template]($.extend(true, {}, model.toJSON(), {id: model.cid, valid: model.validateType()})));
+	Views.ToggleView = Backbone.View.extend( /** @lends Views.ToggleView */ {
+		initialize: function(options) {
+			var view = this;
+			this.$content = $(options.content);
+			this.$content.on("click", ".close", function(e) {
+				e.preventDefault();
+				view.$content.hide();
 			});
-			this.$("ul").html(html.join(""));
-			this.$el.fadeIn();
+		},
+		events: {
+			"click": "toggle"
+		},
+		toggle: function(e) {
+			e.preventDefault();
+			this.$content.toggle();
 		}
 	});
 

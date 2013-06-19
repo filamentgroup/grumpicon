@@ -49,9 +49,14 @@ require([
 				collection: svgFiles
 			});
 
-			new Views.FilesView({
-				el: "#file-list",
-				collection: svgFiles
+			new Views.ToggleView({
+				el: ".wat",
+				content: ".wat-it-is"
+			});
+
+			new Views.ToggleView({
+				el: ".see-previews",
+				content: "#file-previews"
 			});
 
 			_.each(["svg-css", "png-css", "fallback-css", "example-html", "svg-icons"], function( name ) {
