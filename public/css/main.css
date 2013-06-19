@@ -382,6 +382,12 @@ opacity: 1;  }
 
 .logo .three {
 	opacity: 0;
+	margin-top: .2em;
+	-webkit-animation: blinkin 5s infinite;
+   -moz-animation: blinkin 5s infinite;
+   -ms-animation: blinkin 5s infinite;
+   -o-animation: blinkin 5s infinite;
+   animation: blinkin 5s infinite;
 }
 
 
