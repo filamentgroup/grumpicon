@@ -582,8 +582,8 @@ pre {
 }
 
 h3 {
-	margin-top: 2.5em;
-	margin-bottom:1em;
+/*	margin-top: 2.5em;
+	margin-bottom:1em;*/
 }
 #svg-icons-results {
 	margin-bottom:2em;
@@ -639,6 +639,16 @@ h3 {
 	margin:0 0 2px 0;
 	border-radius: 2px;
 }
+
+#file-previews > pre {
+	border: solid #ddd 1px;
+	padding: 1.25em;
+}
+#file-previews > pre:hover {
+	color: #f763ec;
+}
+
+
 
 /* min-width:40em */
 @media(min-width:40em) {
