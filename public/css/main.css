@@ -29,77 +29,170 @@ a:hover, a:focus {
 	margin: 2em auto 0;
 	font-size: 1.2em;
 	position: relative;
+	-webkit-animation: logoin 5s 1;
+	   -moz-animation: logoin 5s 1;
+	   -ms-animation: logoin 5s 1;
+	   -o-animation: logoin 5s 1;
+	   animation: logoin 5s 1;
+	   -webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
 }
 
-@-moz-keyframes movingtarget {
+
+@-moz-keyframes logoin {
   0% {
-    margin-left: 0;
-  }
-  50% {
-   margin-left: 2em;
-  }
+ left: -60%;  }
   100% {
-   margin-left: 0;
+ left: 0;   }
+}
+@-o-keyframes logoin {
+  0% {
+ left: -60%;  }
+  100% {
+ left: 0;   }
+}
+@-webkit-keyframes logoin {
+  0% {
+ left: -60%;  }
+  100% {
+ left: 0;   }
+}
+@-ms-keyframes logoin {
+  0% {
+ left: -60%;  }
+  100% {
+ left: 0;   }
+}
+@keyframes logoin {
+  0% {
+ left: -60%;  }
+  100% {
+ left: 0;   }
+}
+
+
+.hup {
+	display: block;
+	-webkit-animation: marchhup .5s 10;
+	   -moz-animation: marchhup .5s  10;
+	   -ms-animation: marchhup .5s 10;
+	   -o-animation: marchhup .5s 10;
+	   animation: marchhup .5s 10;
+	   -webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+}
+.annnnd {
+	position: absolute;
+	top:.5em;
+	opacity: 0;
+	-webkit-animation: marchaaand .5s 10;
+	   -moz-animation: marchaaand .5s 10;
+	   -ms-animation: marchaaand .5s 10;
+	   -o-animation: marchaaand .5s 10;
+	   animation: marchaaand .5s 10;
+	   -webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+}
+
+@-moz-keyframes marchhup {
+ 0%,49.9% {
+   opacity: 1;
+  }
+  50%,100% {
+   opacity: 0;
   }
 }
-@-o-keyframes movingtarget {
-  0% {
-    margin-left: 0;
+@-o-keyframes marchhup {
+ 0%,49.9% {
+   opacity: 1;
   }
-  50% {
-   margin-left: 2em;
-  }
-  100% {
-   margin-left: 0;
+  50%,100% {
+   opacity: 0;
   }
 }
-@-webkit-keyframes movingtarget {
-  0% {
-    margin-left: 0;
+@-webkit-keyframes marchhup {
+ 0%,49.9% {
+   opacity: 1;
   }
-  50% {
-   margin-left: 2em;
-  }
-  100% {
-   margin-left: 0;
+  50%,100% {
+   opacity: 0;
   }
 }
-@-ms-keyframes movingtarget {
-  0% {
-    margin-left: 0;
+@-ms-keyframes marchhup {
+ 0%,49.9% {
+   opacity: 1;
   }
-  50% {
-   margin-left: 2em;
-  }
-  100% {
-   margin-left: 0;
+  50%,100% {
+   opacity: 0;
   }
 }
-@keyframes movingtarget {
-  0% {
-    margin-left: 0;
+@keyframes marchhup {
+ 0%,49.9% {
+   opacity: 1;
   }
-  50% {
-   margin-left: 2em;
-  }
-  100% {
-   margin-left: 0;
+  50%,100% {
+   opacity: 0;
   }
 }
+
+
+
+
+@-moz-keyframes marchaaand {
+ 0%,49.9% {
+   opacity: 0;
+  }
+  50%,100% {
+   opacity: 1;
+  }
+}
+@-o-keyframes marchaaand {
+ 0%,49.9% {
+   opacity: 0;
+  }
+  50%,100% {
+   opacity: 1;
+  }
+}
+@-webkit-keyframes marchaaand {
+ 0%,49.9% {
+   opacity: 0;
+  }
+  50%,100% {
+   opacity: 1;
+  }
+}
+@-ms-keyframes marchaaand {
+ 0%,49.9% {
+   opacity: 0;
+  }
+  50%,100% {
+   opacity: 1;
+  }
+}
+@keyframes marchaaand {
+ 0%,49.9% {
+   opacity: 0;
+  }
+  50%,100% {
+   opacity: 1;
+  }
+}
+
+
+
+
+
+
 .logo>i {
 	font-size: 1.4em;
 	position: absolute;
-	top: 7em;
+	top: 8em;
 	width: 4em;
 	height: 4em;
 	border-radius: 100%;
 	background: black;
-	left: 4em;
-	 -webkit-animation: movingtarget 9s infinite;
-	   -moz-animation: movingtarget 9s infinite;
-	   -ms-animation: movingtarget 9s infinite;
-	   -o-animation: movingtarget 9s infinite;
-	   animation: movingtarget 9s infinite;
+	left: 4.5em;
 	   -webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 }
@@ -243,27 +336,10 @@ a:hover, a:focus {
   }
 }
 
-
-.logo .two {
-	opacity: 0;
-}
-.logo:hover .one,
-.logo:hover .three {
-	opacity: 0;
-	display: none;
-}
-.logo:hover .two {
-	opacity: 1;
-}
 .logo .three {
-	 opacity: 0; 
-	 margin-top: .2em;
-   -webkit-animation: blinkin 5s infinite;
-   -moz-animation: blinkin 5s infinite;
-   -ms-animation: blinkin 5s infinite;
-   -o-animation: blinkin 5s infinite;
-   animation: blinkin 5s infinite;
+	opacity: 0;
 }
+
 
 .instructions {
 	text-align: center;
