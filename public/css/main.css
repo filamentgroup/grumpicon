@@ -41,31 +41,31 @@ a:hover, a:focus {
 
 @-moz-keyframes logoin {
   0% {
- left: -100%;  }
+ left: -60%;  }
   100% {
  left: 0;   }
 }
 @-o-keyframes logoin {
   0% {
- left: -100%;  }
+ left: -60%;  }
   100% {
  left: 0;   }
 }
 @-webkit-keyframes logoin {
   0% {
- left: -100%;  }
+ left: -60%;  }
   100% {
  left: 0;   }
 }
 @-ms-keyframes logoin {
   0% {
- left: -100%;  }
+ left: -60%;  }
   100% {
  left: 0;   }
 }
 @keyframes logoin {
   0% {
- left: -100%;  }
+ left: -60%;  }
   100% {
  left: 0;   }
 }
@@ -184,62 +184,6 @@ a:hover, a:focus {
 
 
 
-
-@-moz-keyframes movingtarget {
-  0% {
-    margin-left: 0;
-  }
-  50% {
-   margin-left: 1em;
-  }
-  100% {
-   margin-left: 0;
-  }
-}
-@-o-keyframes movingtarget {
-  0% {
-    margin-left: 0;
-  }
-  50% {
-   margin-left: 1em;
-  }
-  100% {
-   margin-left: 0;
-  }
-}
-@-webkit-keyframes movingtarget {
-  0% {
-    margin-left: 0;
-  }
-  50% {
-   margin-left: 1em;
-  }
-  100% {
-   margin-left: 0;
-  }
-}
-@-ms-keyframes movingtarget {
-  0% {
-    margin-left: 0;
-  }
-  50% {
-   margin-left: 1em;
-  }
-  100% {
-   margin-left: 0;
-  }
-}
-@keyframes movingtarget {
-  0% {
-    margin-left: 0;
-  }
-  50% {
-   margin-left: 1em;
-  }
-  100% {
-   margin-left: 0;
-  }
-}
 .logo>i {
 	font-size: 1.4em;
 	position: absolute;
@@ -249,11 +193,6 @@ a:hover, a:focus {
 	border-radius: 100%;
 	background: black;
 	left: 4.5em;
-	 -webkit-animation: movingtarget 9s 6s infinite;
-	   -moz-animation: movingtarget 9s 6s infinite;
-	   -ms-animation: movingtarget 9s 6s infinite;
-	   -o-animation: movingtarget 9s 6s infinite;
-	   animation: movingtarget 9s 6s infinite;
 	   -webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 }
