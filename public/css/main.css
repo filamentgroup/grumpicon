@@ -180,6 +180,24 @@ a {
 	font-family: 'Patua One', cursive;
 }
 
+.wat-it-is {
+	display: none;
+	background: #666;
+	color: #fff;
+	padding: 1em;
+	margin: 1em 0;
+}
+
+.wat-it-is .close {
+	float: right;
+	margin-top: -1em;
+}
+
+.see-previews {
+	text-align: right;
+	padding-right: 2em;
+}
+
 .dragover .drop-note {
 	position:absolute;
 	bottom:0;
@@ -199,7 +217,7 @@ a {
 
 
 
-#file-list,
+#file-previews,
 #results,
 #download-btn{ display: none }
 
@@ -323,9 +341,6 @@ pre {
 
 #results {
 	margin-top:-3em;
-}
-#file-list {
-	display:none !important;
 }
 
 h3 {
