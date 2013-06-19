@@ -315,12 +315,16 @@ a:hover, a:focus {
 }
 
 .wat-it-is {
-	background: #444;
+	background: #e9e9e9;;
 	display: none;
-	color: #fefefe;
+	color: #444;
 	margin: 1em 0;
+/*	border: solid #ddd 1px;*/
+/*	border-top: solid #69c .5em;
+	border-bottom: solid #69c .5em;*/
 	border: solid #ddd 1px;
 	line-height: 1.4em;
+	border-radius: 2px;
 }
 
 .wat-it-is p {
@@ -509,17 +513,15 @@ h3 {
 }
 #svg-icons-results>div {
 	background-color:#e9e9e9;
-	border: solid #e5e5e5 1px;
+	border: solid #ddd 1px;
 	padding: .6em 1.25em .6em 1.25em;
 	margin:0 0 2px 0;
+	border-radius: 2px;
 	-webkit-transition: background-color .5s ease;
 	-moz-transition: background-color .5s ease;
 	transition: background-color .5s ease;
 }
-#svg-icons-results div:hover {
-	background-color: #dedede;
-}
-#svg-icons-results div:hover .meta {
+#svg-icons-results>div:hover {
 	background-color: #dedede;
 }
 #svg-icons-results .meta {
@@ -563,5 +565,6 @@ h3 {
 		max-width: 65%;
 		margin: 0 auto;
 	}
+
 }
 /* /min-width:40em */
