@@ -14,7 +14,7 @@ a {
 	color: #69c;
 }
 a:hover, a:active {
-	 color: #1A3684;
+	 color: #111;
 }
 
 .logo {
@@ -313,20 +313,23 @@ a:hover, a:active {
 	background: #444;
 	display: none;
 	color: #fefefe;
-	padding: 1em;
 	margin: 1em 0;
 	border: solid #ddd 1px;
 	line-height: 1.4em;
 }
 
+.wat-it-is p {
+	padding: 1em 1.25em 1em 1.25em;
+}
+
 .wat-it-is .close {
 	float: right;
-	margin-top: -1em;
+	margin-top: -2em;
+	padding-right: 1em;
 }
 
 .see-previews {
 	text-align: right;
-	padding-right: 2em;
 }
 
 .dragover .drop-note {
@@ -501,9 +504,9 @@ h3 {
 	margin-top:6em;
 }
 #svg-icons-results > div {
-	background-color:#eee;
+	background-color:#e9e9e9;
 	border: solid #e5e5e5 1px;
-	padding:.6em;
+	padding: .6em 1.25em .6em 1.25em;
 	margin:0 0 2px 0;
 }
 #svg-icons-results div:hover {
@@ -523,7 +526,6 @@ h3 {
 #svg-icons-results .meta h5 {
 	margin:0;
 	font-weight:normal;
-	
 }
 #svg-icons-results .meta p {
 	margin: .1em 0 .5em 0;
@@ -533,7 +535,7 @@ h3 {
 #svg-icons-results .close {
     float: right;
     font-size: 1em;
-	margin-top: 1.3em;
+	margin-top: .35em;
 	font-size: .8em;
 	padding-right: 1em;
 	color: #bbb;
@@ -542,4 +544,15 @@ h3 {
 #svg-icons-results img {
 	display: inline-block;
 	vertical-align:top;
+}
+
+@media(min-width:40em) {
+	.wat-it-is {
+		margin: 2em auto;
+		max-width: 65%;
+	}
+	.row {
+		max-width: 65%;
+		margin: 0 auto;
+	}
 }
