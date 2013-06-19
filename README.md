@@ -1,15 +1,22 @@
-# grunticon-app!
+# Grumpicon!
 
 ```
-         /'
-        //
-    .  //
-    |\//7
-   /' " \     
-  .   . .      
-  | (    \     
-  |  '._  '        
-  /    \'-'
+                               /'
+                              //
+                          .  //
+                          |\//7
+                         /' " \
+                        .   Õ~Õ
+                        | (    \
+           _ _ - -_     |  '._  '
+  _ __   _-         \_ _/    \'-'
+ //  \\_/                 
+ \\   |                      |
+ ||   |                      /
+/ |    \                    /
+|VV    ||--\__________/-||-/| 
+       ||  ||           || ||
+       { } { }          { }{ }
 
 ```
 
@@ -23,4 +30,4 @@
 3. Open a browser and navigate to `localhost:5000`
 4. Drag svgs into the app
 
-More documentation is available on the [Grunticon task page](https://github.com/filamentgroup/grunticon/).
+You can also run Grunticon from the command line as part of a Grunt.js build process. More documentation is available on the [Grunticon task page](https://github.com/filamentgroup/grunticon/).
