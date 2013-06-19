@@ -546,6 +546,10 @@ pre {
 }
 
 /* Thanks Dan Cederholm http://blog.typekit.com/2011/02/10/type-study-an-all-css-button/ */
+#download-btn {
+	margin: 2em auto;
+	text-align: center;
+}
 .get-it {		
 	display: inline-block;
 	padding:0;
@@ -565,9 +569,6 @@ pre {
 	-moz-transition: -moz-box-shadow .2s ease-in-out;
 	-o-transition: -o-box-shadow .2s ease-in-out;
 	transition: box-shadow .2s ease-in-out;
-	position:absolute;
-	top: 12em;
-	right:2em;
 	}
 .get-it span {	
 	display: inline-block;
