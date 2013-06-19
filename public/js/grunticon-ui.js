@@ -82,7 +82,7 @@ require([
 
 
 		} else {
-			alert("Your browser isn't supported.");
+			alert("You're wowser isn't supported.");
 		}
 	});
 	
