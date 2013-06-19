@@ -248,7 +248,7 @@ a:hover, a:focus {
 	height: 4em;
 	border-radius: 100%;
 	background: black;
-	left: 4em;
+	left: 4.5em;
 	 -webkit-animation: movingtarget 9s 6s infinite;
 	   -moz-animation: movingtarget 9s 6s infinite;
 	   -ms-animation: movingtarget 9s 6s infinite;
