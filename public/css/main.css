@@ -427,7 +427,8 @@ pre {
 
 
 #results {
-	margin-top:-3em;
+	margin: -3em auto 0;
+max-width: 50em;
 }
 
 h3 {
