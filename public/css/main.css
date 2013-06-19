@@ -96,6 +96,8 @@ a:hover, a:active {
 	   -ms-animation: movingtarget 9s infinite;
 	   -o-animation: movingtarget 9s infinite;
 	   animation: movingtarget 9s infinite;
+	   -webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
 }
 .logo>i>i {
 	font-size: 1em;
