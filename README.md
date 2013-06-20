@@ -24,6 +24,10 @@
 
 ### Getting Started
 
+To use, check out http://www.grumpicon.com
+
+### Running Locally
+
 1. Clone repository: `git clone https://github.com/filamentgroup/grunticon-app`
 2. Install Dependencies: `npm install`
 2. Run the app: `node app.js`
