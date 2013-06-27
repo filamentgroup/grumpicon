@@ -141,15 +141,14 @@ define([
 	});
 
 	Views.DownloadBtnView = Views.DownloadView.extend( /** @lends Views.DownloadView */ {
-		events: {
-			"click #download": "download"
-		},
-		download: function(e) {
-			e.preventDefault();
+		render: function() {
 			var view = this,
 				zip = new JSZip(),
-				img = zip.folder("png");
+				img = zip.folder("png"),
+				link = view.$el.find( "#download" ), blob;
 
+				console.log( "Link: ");
+				console.log( link );
 				view.collection.each(function(model) {
 					img.file(model.get("name") + ".png",
 						model.get("pngDataUri").replace("data:image/png;base64,","") + "\n",
@@ -162,9 +161,19 @@ define([
 				zip.file("grunticon.loader.txt", '<!-- Unicode CSS Loader: place this in the head of your page -->\n<script>\n/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */\nwindow.grunticon=function(e){if(e&&3===e.length){var t=window,n=!!t.document.createElementNS&&!!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect&&!!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1"),A=function(A){var o=t.document.createElement("link"),r=t.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e[A&&n?0:A?1:2],r.parentNode.insertBefore(o,r)},o=new t.Image;o.onerror=function(){A(!1)},o.onload=function(){A(1===o.width&&1===o.height)},o.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};\ngrunticon( [ "[YOUR PATH HERE]/icons.data.svg.css", "[YOUR PATH HERE]/icons.data.png.css", "[YOUR PATH HERE]/icons.fallback.css" ] );</script>\n<noscript><link href="[YOUR PATH HERE]/icons.fallback.css" rel="stylesheet"></noscript>');
 				zip.file("preview.html", unescape($("#preview-html").html().replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&amp;/g,"&")));			
 
-			var content = zip.generate();
 
-			location.href = "data:application/zip;base64," + content;
+			if( Modernizr.adownload && ( window.URL && window.URL.createObjectURL ) ){
+				link.attr( "download" , "grunticon.zip" );
+				blob = zip.generate({type:"blob"});
+				link.attr( "href" , window.URL.createObjectURL( blob ) );
+			} else {
+				blob = zip.generate();
+				link.on( "click" , function( e ){
+					e.preventDefault();
+					location.href = "data:application/zip;base64," + blob;
+				});
+			}
+			view.$el.fadeIn();
 		}
 	});
 
