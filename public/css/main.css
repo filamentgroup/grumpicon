@@ -433,11 +433,19 @@ opacity: 1;  }
 	display:none;
 }
 
-.wat {
+.wat,
+.issues {
 	position: absolute;
 	top: 0;
-	left: 2em;
 	font-family: 'Patua One', cursive;
+}
+
+.wat {
+	left: 2em;
+}
+
+.issues {
+	right: 2em;
 }
 
 .wat-it-is {
