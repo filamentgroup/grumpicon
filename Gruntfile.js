@@ -66,5 +66,6 @@ module.exports = function(grunt) {
 
 	// Default task.
 	grunt.registerTask('default', ['jshint', 'nodeunit', 'jst:compile', 'requirejs:build']);
+	grunt.registerTask('test', ['nodeunit']);
 
 };
