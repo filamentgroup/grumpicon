@@ -147,8 +147,6 @@ define([
 				img = zip.folder("png"),
 				link = view.$el.find( "#download" ), blob;
 
-				console.log( "Link: ");
-				console.log( link );
 				view.collection.each(function(model) {
 					img.file(model.get("name") + ".png",
 						model.get("pngDataUri").replace("data:image/png;base64,","") + "\n",
