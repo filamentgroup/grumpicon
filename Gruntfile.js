@@ -50,6 +50,10 @@ module.exports = function(grunt) {
 				files: '<%= jshint.lib.src %>',
 				tasks: ['jshint:lib', 'nodeunit']
 			},
+			pub: {
+				files: ['public/js/**/*.js', '!public/js/grunticon-ui.min.js'],
+				tasks: [ 'default' ]
+			},
 			test: {
 				files: '<%= jshint.test.src %>',
 				tasks: ['jshint:test', 'nodeunit']
