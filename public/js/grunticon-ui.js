@@ -70,6 +70,11 @@ require([
 				});
 			});
 
+			new Views.ResultsCount({
+				el: "#results-count",
+				collection: svgFiles
+			});
+
 			new Views.DownloadView({
 				el: "#results",
 				collection: svgFiles

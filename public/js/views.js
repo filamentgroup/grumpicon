@@ -57,6 +57,16 @@ define([
 		}
 	});
 
+	Views.ResultsCount = Backbone.View.extend({
+		initialize: function(options) {
+			this.listenTo(this.collection, "readDone", this.render);
+			this.listenTo(this.collection, "remove", this.render);
+		},
+		render: function(){
+			this.$el.html( this.collection.length + " Grumpicons" );
+		}
+	});
+	
 	Views.ListView = Backbone.View.extend({
 		events: {
 			"click .close": "removeFile"

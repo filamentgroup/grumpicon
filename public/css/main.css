@@ -644,9 +644,13 @@ h3 {
 /*	margin-top: 2.5em;
 	margin-bottom:1em;*/
 }
+
+#results-count {
+	margin-top:5em;
+}
 #svg-icons-results {
 	margin-bottom:2em;
-	margin-top:6em;
+	margin-top:1em;
 }
 #svg-icons-results>div {
 	background-color:#e9e9e9;
