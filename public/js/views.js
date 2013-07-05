@@ -26,6 +26,7 @@ define([
 		addFiles: function(fileList) {
 			var files = [],
 				len = fileList.length,
+				col = this.collection,
 				i;
 
 			// loop through the file list and convert it to an array
@@ -34,7 +35,10 @@ define([
 					"file": fileList[i]
 				});
 			}
-			this.collection.add(files);
+			col.add(files);
+			$.when.apply(window, col.isRead()).done(function(){
+				col.trigger( "readDone" );
+			});
 		},
 		/** Handle dropped files */
 		fileDrop: function(e) {
@@ -119,20 +123,18 @@ define([
 			var view = this,
 				html = "";
 
-			$.when.apply(window, view.collection.isRead).done(function(){
-					view.collection.each(function(model) {
-						var data = $.extend(true, {}, model.toJSON(), {id: model.cid});
-						html += JST[view.template](data);
-					});
-
-				if ( view.escapeHtml ) {
-					html = html.replace(/</g, "&lt;");
-				}
-
-				view.$el.html(html);
-				view.$el.fadeIn();
-
+			view.collection.each(function(model) {
+				var data = $.extend(true, {}, model.toJSON(), {id: model.cid});
+				html += JST[view.template](data);
 			});
+
+			if ( view.escapeHtml ) {
+				html = html.replace(/</g, "&lt;");
+			}
+
+			view.$el.html(html);
+			view.$el.fadeIn();
+
 		}
 	});
 

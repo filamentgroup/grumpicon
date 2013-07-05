@@ -54,7 +54,6 @@ define([
 			var datauri = this.canvas.toDataURL();
 			this.set("pngDataUri", datauri);
 			this.deferred.resolve();
-			this.trigger("readDone");
 		},
 		/** make sure dropped file is a svg */
 		validateType: function() {
