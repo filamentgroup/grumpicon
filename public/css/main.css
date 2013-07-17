@@ -433,11 +433,19 @@ opacity: 1;  }
 	display:none;
 }
 
-.wat {
+.wat,
+.issues {
 	position: absolute;
 	top: 0;
-	left: 2em;
 	font-family: 'Patua One', cursive;
+}
+
+.wat {
+	left: 2em;
+}
+
+.issues {
+	right: 2em;
 }
 
 .wat-it-is {
@@ -550,7 +558,7 @@ pre {
 	margin: 2em auto;
 	text-align: center;
 }
-.get-it {		
+.get-it {
 	display: inline-block;
 	padding:0;
 	-webkit-border-radius: 8px;
@@ -636,9 +644,13 @@ h3 {
 /*	margin-top: 2.5em;
 	margin-bottom:1em;*/
 }
+
+#results-count {
+	margin-top:5em;
+}
 #svg-icons-results {
 	margin-bottom:2em;
-	margin-top:6em;
+	margin-top:1em;
 }
 #svg-icons-results>div {
 	background-color:#e9e9e9;
