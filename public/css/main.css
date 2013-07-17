@@ -38,7 +38,6 @@ a:hover, a:focus {
 	-webkit-perspective: 1000;
 }
 
-
 @-moz-keyframes logoin {
   0% {
  left: -60%;  }
@@ -69,8 +68,6 @@ a:hover, a:focus {
   100% {
  left: 0;   }
 }
-
-
 @-moz-keyframes fadein {
   0%,80% {
  opacity: 0;  }
@@ -102,8 +99,6 @@ opacity: 1;  }
 opacity: 1;  }
 }
 
-
-
 .non-essential-bs {
 	opacity: 1;
 	-webkit-animation: fadein 6s;
@@ -114,7 +109,6 @@ opacity: 1;  }
 	   -webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 }
-
 .hup {
 	display: block;
 	-webkit-animation: marchhup .5s 10;
@@ -379,7 +373,6 @@ opacity: 1;  }
  opacity: 0;
   }
 }
-
 .logo .three {
 	opacity: 0;
 	margin-top: .2em;
@@ -389,8 +382,6 @@ opacity: 1;  }
    -o-animation: blinkin 5s infinite;
    animation: blinkin 5s infinite;
 }
-
-
 .instructions {
 	text-align: center;
 	font-size: 1.8em;
@@ -403,7 +394,6 @@ opacity: 1;  }
 	padding-top: 1em;
 	overflow: visible;
 }
-
 .by {
 	font-family: arial, san-serif;
 	font-size: .8em;
@@ -428,55 +418,43 @@ opacity: 1;  }
 	margin-top:.8em;
 }
 .dragover { background: rgba(0,0,0,.1) }
-
 .drop-note {
 	display:none;
 }
-
 .wat,
 .issues {
 	position: absolute;
 	top: 0;
 	font-family: 'Patua One', cursive;
 }
-
 .wat {
 	left: 2em;
 }
-
 .issues {
 	right: 2em;
 }
-
 .wat-it-is {
 	background: #e9e9e9;;
 	display: none;
 	color: #444;
 	margin: 1em 0;
 	padding: 1em 0 1em 0;
-/*	border: solid #ddd 1px;*/
-/*	border-top: solid #69c .5em;
-	border-bottom: solid #69c .5em;*/
 	border: solid #ddd 1px;
 	line-height: 1.4em;
 	border-radius: 2px;
 }
-
 .wat-it-is p {
 	padding: .5em 1.25em .5em 1.25em;
 	margin: 0;
 }
-
 .wat-it-is .close {
 	float: right;
 	margin-top: -1em;
 	padding-right: 1em;
 }
-
 .see-previews {
 	text-align: right;
 }
-
 .dragover .drop-note {
 	position:absolute;
 	bottom:0;
@@ -494,17 +472,14 @@ opacity: 1;  }
 	font-weight:normal;
 }
 
-
-
 #file-previews,
 #results,
 #download-btn{ display: none }
 
 pre {
-    max-height: 15em;
+    max-height: 20em;
     overflow-y: scroll;
 }
-
 .page-header {
 	background-color: #f7f8f8;
 	padding:.6em;
@@ -705,7 +680,12 @@ h3 {
 
 #file-previews > pre {
 	border: solid #ddd 1px;
-	padding: 1.25em;
+	padding: 1.75em;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;*/
 }
 #file-previews > pre:hover {
 	color: #f763ec;
