@@ -14,3 +14,5 @@ cookbook_file "/etc/init/grumpicon.conf" do
   source "grumpicon.conf"
 end
 
+
+execute "start grumpicon"
