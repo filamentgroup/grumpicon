@@ -1,0 +1,2 @@
+depends "vim"
+depends "nodejs"
