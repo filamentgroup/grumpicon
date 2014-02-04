@@ -1611,7 +1611,8 @@
 				var g = this.getGradient(ctx, element);
 				if (g == null) return addParentOpacity(stopsContainer.stops[stopsContainer.stops.length - 1].color);
 				for (var i=0; i<stopsContainer.stops.length; i++) {
-					g.addColorStop(stopsContainer.stops[i].offset, addParentOpacity(stopsContainer.stops[i].color));
+					var c = stopsContainer.stops[i].color.length ? stopsContainer.stops[i].color : 'rgba(0,0,0,1)';
+					g.addColorStop(stopsContainer.stops[i].offset, addParentOpacity(c));
 				}
 				
 				if (this.attribute('gradientTransform').hasValue()) {
