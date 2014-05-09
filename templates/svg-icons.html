@@ -1,8 +1,10 @@
+{{#each files}}
 <div>
 	<div class="meta">
-		<h5><%= name %></h5>
-		<p><%= file.size %> bytes<p>
+		<h5>{{ name }}</h5>
+		<p>{{ file.size }} bytes<p>
 	</div>
-	<img src="<%= svgDataUri %>" alt="" />
-	<a href='#close' class='close' title='Remove file' data-file='<%= id %>'>Remove</a>
+	<img src="{{ svgDataUri }}" alt="" />
+	<a href='#close' class='close' title='Remove file' data-file='{{ id }}'>Remove</a>
 </div>
+{{/each}}
