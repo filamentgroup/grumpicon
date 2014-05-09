@@ -5,11 +5,11 @@
 	<title>Grumpicon. A Web app for the Grunticon workflow.</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
 
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="dist/main.css">
 	<link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
 	
-	<script src="js/libs/modernizr.custom.js"></script>
-	<script src="js/libs/require.js" data-main="js/grunticon-ui.min"></script>
+	<script src="js/modernizr.js"></script>
+	<script src="lib/requirejs/require.js" data-main="dist/grumpicon"></script>
 
 	<link rel="icon" href="public/favicon.ico">
 
@@ -78,9 +78,16 @@
 
 			<p>To start, export SVG files for each of your images, drop those files onto the grumpy animal above, then click the 'Downlode it!" button to grab the files.</p>
 
-			<p>Once downloaded, check out preview.html to see a preview of your icons and their class names. To integrate in your site, you can drop the exported files into a folder on your site and paste the contents of grunticon.loader.txt into the <code>head</code> section of your HTML templates. Note: Be sure to replace the 4 [YOUR PATH HERE] parts of that text with the path to your own grunticon files (a root-relative path often works best across a whole site).</p>
+			<p>Once downloaded, check out preview.html to see a preview of your icons and their class names. To integrate in your site, you can drop the exported files into a folder on your site and paste the contents of grunticon.loader.txt into the <code>head</code> section of your HTML templates.</p>
+
+			<p><span class="new">New!</span> You can now configure things like the file names, class names, and even the colors of the generated assets. Check out the "Grumpiconfig" section.</p>
 
 			<a href='#close' class='close' title='Close'>Close</a>
+		</div>
+
+		<div class="row">
+			<p class="prefs non-essential-bs"><a href="#">Grumpiconfig</a></p>
+			<div id="prefs"></div>
 		</div>
 
 		<div class="row" id="supported">
@@ -93,47 +100,14 @@
 		<div class="row">
 			<div class="span12">
 				
-				<div id="results">					
+				<div id="results">
 					
 					<div id="results-count"></div>
 					<div id="svg-icons-results"></div>
 					
 					<p class="see-previews"><a href="#file-previews" title="Preview the files">Preview the files</a></p>
 
-					<div id="file-previews">
-					
-						<h3>Export Preview</h3>
-						
-						<h4>icons.data.svg.css</h4>
-						<pre id="svg-css-results"></pre>
-						
-						<h4>icons.data.png.css</h4>
-						<pre id="png-css-results"></pre>
-
-						<h4>icons.fallback.css</h4>
-						<pre id="fallback-css-results"></pre>
-						
-						
-						
-						<h4>preview.html</h4>
-						<pre id="preview-html">
-&lt;!doctype HTML>
-&lt;html>
-	&lt;head>
-		&lt;title>Icons Preview!&lt;/title>
-		&lt;!-- Grunticon Loader: place this in the head of your page --&gt;
-		&lt;script&gt;
-		/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
-		window.grunticon=function(e){if(e&amp;&amp;3===e.length){var t=window,n=!(!t.document.createElementNS||!t.document.createElementNS(&quot;http://www.w3.org/2000/svg&quot;,&quot;svg&quot;).createSVGRect||!document.implementation.hasFeature(&quot;http://www.w3.org/TR/SVG11/feature#Image&quot;,&quot;1.1&quot;)||window.opera&amp;&amp;-1===navigator.userAgent.indexOf(&quot;Chrome&quot;)),o=function(o){var r=t.document.createElement(&quot;link&quot;),a=t.document.getElementsByTagName(&quot;script&quot;)[0];r.rel=&quot;stylesheet&quot;,r.href=e[o&amp;&amp;n?0:o?1:2],a.parentNode.insertBefore(r,a)},r=new t.Image;r.onerror=function(){o(!1)},r.onload=function(){o(1===r.width&amp;&amp;1===r.height)},r.src=&quot;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==&quot;}};
-		grunticon( [ &quot;icons.data.svg.css&quot;, &quot;icons.data.png.css&quot;, &quot;icons.fallback.css&quot; ] );&lt;/script&gt;
-		&lt;noscript&gt;&lt;link href=&quot;icons.fallback.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;/noscript&gt;
-	&lt;/head>
-	&lt;body>
-		<span id="example-html-results"></span>
-	&lt;/body>
-&lt;/html>
-						</pre>
-					</div>
+					<div id="file-previews"></div>
 				</div>
 			</div>
 		</div>
