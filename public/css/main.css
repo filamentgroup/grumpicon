@@ -1,5 +1,5 @@
 html,
-body { 
+body {
 	height: 100%;
 		font-family: 'Patua One', cursive;
 }
@@ -285,7 +285,7 @@ opacity: 1;  }
   }
   1%,2% {
 	opacity: 0;
-  
+
   }
   3% {
 	opacity: 1;
@@ -297,7 +297,7 @@ opacity: 1;  }
   }
   1%,2% {
 	opacity: 0;
-  
+
   }
   3% {
 	opacity: 1;
@@ -309,7 +309,7 @@ opacity: 1;  }
   }
   1%,2% {
 	opacity: 0;
-   
+
   }
   3% {
 	opacity: 1;
@@ -321,7 +321,7 @@ opacity: 1;  }
   }
   1%,2% {
 	opacity: 0;
-  
+
   }
   3% {
 	opacity: 1;
@@ -514,7 +514,7 @@ pre {
 #upload {
 	margin-bottom:0;
 }
-#upload .container { 
+#upload .container {
 	padding: 1em 0;
 	color:#bbb;
 }
@@ -567,7 +567,7 @@ pre {
 	-o-transition: -o-box-shadow .2s ease-in-out;
 	transition: box-shadow .2s ease-in-out;
 	}
-.get-it span {	
+.get-it span {
 	display: inline-block;
 	color:#fff;
 	padding: .5em 2em;
@@ -588,18 +588,18 @@ pre {
 	-o-transition: -o-transform .15s ease-in-out;
 	transition: transform .15s ease-in-out;
 	}
-.get-it:hover {	
-	-webkit-box-shadow: 
+.get-it:hover {
+	-webkit-box-shadow:
 		0 9px 0 #e036d4,
 		0 14px 0 rgba(0,0,0,.3);
-	-moz-box-shadow: 
+	-moz-box-shadow:
 		0 8px 0 #e036d4,
 		0 14px 0 rgba(0,0,0,.3);
-	box-shadow: 
+	box-shadow:
 		0 8px 0 #e036d4,
 		0 14px 0 rgba(0,0,0,.1);
 	}
-.get-it:hover span {	
+.get-it:hover span {
 	-webkit-transform: translate(0, 2px);
 	-moz-transform: translate(0, 2px);
 	-o-transform: translate(0, 2px);
@@ -607,13 +607,13 @@ pre {
 	}
 
 .get-it:active {
-	-webkit-box-shadow: 
+	-webkit-box-shadow:
 		0 7px 0 #e036d4,
 		0 8px 0 rgba(0,0,0,.3);
-	-moz-box-shadow: 
+	-moz-box-shadow:
 		0 7px 0 #e036d4,
 		0 8px 0 rgba(0,0,0,.3);
-	box-shadow: 
+	box-shadow:
 		0 7px 0 #e036d4,
 		0 8px 0 rgba(0,0,0,.1);
 }
@@ -659,7 +659,7 @@ h3 {
 	margin:0;
 	width:30%;
 	padding:0;
-	vertical-align:top;	
+	vertical-align:top;
 	font-size: 1.2em;
 }
 #svg-icons-results .meta h5 {
