@@ -699,7 +699,7 @@ h3 {
 	-moz-transition: all 0.2s ease;
 	-ms-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;*/
+	transition: all 0.2s ease;
 }
 #file-previews > pre:hover {
 	color: #f763ec;
