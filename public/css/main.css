@@ -136,10 +136,6 @@ opacity: 1;  }
 	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 }
-.prefs {
-	margin-left: 2em;
-}
-
 
 @-moz-keyframes marchhup {
  0%,49.9% {
