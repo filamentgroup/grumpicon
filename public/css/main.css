@@ -332,6 +332,12 @@ opacity: 1;  }
 .logo .three  {
 	position: absolute;
 }
+.logo .one,
+.logo .three {
+	position: absolute;
+	left: 18em;
+	top: 6.5625em;
+}
 .logo .one {
 	-webkit-animation: blinkout 5s infinite;
 	-moz-animation: blinkout 5s infinite;
