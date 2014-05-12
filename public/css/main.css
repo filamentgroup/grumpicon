@@ -1,7 +1,7 @@
 html,
 body {
 	height: 100%;
-		font-family: 'Patua One', cursive;
+	font-family: 'Patua One', cursive;
 }
 body {
 	background: #fefefe;
@@ -35,93 +35,93 @@ label {
 	font-size: 1.2em;
 	position: relative;
 	-webkit-animation: logoin 5s 1;
-	   -moz-animation: logoin 5s 1;
-	   -ms-animation: logoin 5s 1;
-	   -o-animation: logoin 5s 1;
-	   animation: logoin 5s 1;
-	   -webkit-backface-visibility: hidden;
+	-moz-animation: logoin 5s 1;
+	-ms-animation: logoin 5s 1;
+	-o-animation: logoin 5s 1;
+	animation: logoin 5s 1;
+	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 }
 
 @-moz-keyframes logoin {
-  0% {
+	0% {
  left: -60%;  }
-  100% {
+	100% {
  left: 0;   }
 }
 @-o-keyframes logoin {
-  0% {
+	0% {
  left: -60%;  }
-  100% {
+	100% {
  left: 0;   }
 }
 @-webkit-keyframes logoin {
-  0% {
+	0% {
  left: -60%;  }
-  100% {
+	100% {
  left: 0;   }
 }
 @-ms-keyframes logoin {
-  0% {
+	0% {
  left: -60%;  }
-  100% {
+	100% {
  left: 0;   }
 }
 @keyframes logoin {
-  0% {
+	0% {
  left: -60%;  }
-  100% {
+	100% {
  left: 0;   }
 }
 @-moz-keyframes fadein {
-  0%,80% {
+	0%,80% {
  opacity: 0;  }
-  100% {
+	100% {
 opacity: 1;  }
 }
 @-o-keyframes fadein {
-  0%,80% {
+	0%,80% {
  opacity: 0;  }
-  100% {
+	100% {
 opacity: 1;  }
 }
 @-webkit-keyframes fadein {
-  0%,80% {
+	0%,80% {
  opacity: 0;  }
-  100% {
+	100% {
 opacity: 1;  }
 }
 @-ms-keyframes fadein {
-  0%,80% {
+	0%,80% {
  opacity: 0;  }
-  100% {
+	100% {
 opacity: 1;  }
 }
 @keyframes fadein {
-  0%,80% {
+	0%,80% {
  opacity: 0;  }
-  100% {
+	100% {
 opacity: 1;  }
 }
 
 .non-essential-bs {
 	opacity: 1;
 	-webkit-animation: fadein 6s;
-	   -moz-animation: fadein 6s ;
-	   -ms-animation: fadein 6s;
-	   -o-animation: fadein 6s;
-	   animation: fadein 6s;
-	   -webkit-backface-visibility: hidden;
+	-moz-animation: fadein 6s ;
+	-ms-animation: fadein 6s;
+	-o-animation: fadein 6s;
+	animation: fadein 6s;
+	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 }
 .hup {
 	display: block;
 	-webkit-animation: marchhup .5s 10;
-	   -moz-animation: marchhup .5s  10;
-	   -ms-animation: marchhup .5s 10;
-	   -o-animation: marchhup .5s 10;
-	   animation: marchhup .5s 10;
-	   -webkit-backface-visibility: hidden;
+	-moz-animation: marchhup .5s  10;
+	-ms-animation: marchhup .5s 10;
+	-o-animation: marchhup .5s 10;
+	animation: marchhup .5s 10;
+	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 }
 .annnnd {
@@ -129,11 +129,11 @@ opacity: 1;  }
 	top:.5em;
 	opacity: 0;
 	-webkit-animation: marchaaand .5s 10;
-	   -moz-animation: marchaaand .5s 10;
-	   -ms-animation: marchaaand .5s 10;
-	   -o-animation: marchaaand .5s 10;
-	   animation: marchaaand .5s 10;
-	   -webkit-backface-visibility: hidden;
+	-moz-animation: marchaaand .5s 10;
+	-ms-animation: marchaaand .5s 10;
+	-o-animation: marchaaand .5s 10;
+	animation: marchaaand .5s 10;
+	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 }
 .prefs {
@@ -143,43 +143,43 @@ opacity: 1;  }
 
 @-moz-keyframes marchhup {
  0%,49.9% {
-   opacity: 1;
-  }
-  50%,100% {
-   opacity: 0;
-  }
+	 opacity: 1;
+	}
+	50%,100% {
+	 opacity: 0;
+	}
 }
 @-o-keyframes marchhup {
  0%,49.9% {
-   opacity: 1;
-  }
-  50%,100% {
-   opacity: 0;
-  }
+	 opacity: 1;
+	}
+	50%,100% {
+	 opacity: 0;
+	}
 }
 @-webkit-keyframes marchhup {
  0%,49.9% {
-   opacity: 1;
-  }
-  50%,100% {
-   opacity: 0;
-  }
+	 opacity: 1;
+	}
+	50%,100% {
+	 opacity: 0;
+	}
 }
 @-ms-keyframes marchhup {
  0%,49.9% {
-   opacity: 1;
-  }
-  50%,100% {
-   opacity: 0;
-  }
+	 opacity: 1;
+	}
+	50%,100% {
+	 opacity: 0;
+	}
 }
 @keyframes marchhup {
  0%,49.9% {
-   opacity: 1;
-  }
-  50%,100% {
-   opacity: 0;
-  }
+	 opacity: 1;
+	}
+	50%,100% {
+	 opacity: 0;
+	}
 }
 
 
@@ -187,43 +187,43 @@ opacity: 1;  }
 
 @-moz-keyframes marchaaand {
  0%,49.9% {
-   opacity: 0;
-  }
-  50%,100% {
-   opacity: 1;
-  }
+	 opacity: 0;
+	}
+	50%,100% {
+	 opacity: 1;
+	}
 }
 @-o-keyframes marchaaand {
  0%,49.9% {
-   opacity: 0;
-  }
-  50%,100% {
-   opacity: 1;
-  }
+	 opacity: 0;
+	}
+	50%,100% {
+	 opacity: 1;
+	}
 }
 @-webkit-keyframes marchaaand {
  0%,49.9% {
-   opacity: 0;
-  }
-  50%,100% {
-   opacity: 1;
-  }
+	 opacity: 0;
+	}
+	50%,100% {
+	 opacity: 1;
+	}
 }
 @-ms-keyframes marchaaand {
  0%,49.9% {
-   opacity: 0;
-  }
-  50%,100% {
-   opacity: 1;
-  }
+	 opacity: 0;
+	}
+	50%,100% {
+	 opacity: 1;
+	}
 }
 @keyframes marchaaand {
  0%,49.9% {
-   opacity: 0;
-  }
-  50%,100% {
-   opacity: 1;
-  }
+	 opacity: 0;
+	}
+	50%,100% {
+	 opacity: 1;
+	}
 }
 
 
@@ -240,7 +240,7 @@ opacity: 1;  }
 	border-radius: 100%;
 	background: black;
 	left: 4.5em;
-	   -webkit-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 }
 .logo>i>i {
@@ -266,66 +266,66 @@ opacity: 1;  }
 
 
 @-moz-keyframes blinkout {
-  0% {
+	0% {
 	opacity: 1;
-  }
-  1%,2% {
+	}
+	1%,2% {
 	opacity: 0;
 	position: absolute;
 	left: -999px;
 	display: none;
-  }
-  3% {
+	}
+	3% {
 	opacity: 1;
-  }
+	}
 }
 @-o-keyframes blinkout {
-  0% {
+	0% {
 	opacity: 1;
-  }
-  1%,2% {
+	}
+	1%,2% {
 	opacity: 0;
 
-  }
-  3% {
+	}
+	3% {
 	opacity: 1;
-  }
+	}
 }
 @-webkit-keyframes blinkout {
-  0% {
+	0% {
 	opacity: 1;
-  }
-  1%,2% {
+	}
+	1%,2% {
 	opacity: 0;
 
-  }
-  3% {
+	}
+	3% {
 	opacity: 1;
-  }
+	}
 }
 @-ms-keyframes blinkout {
-  0% {
+	0% {
 	opacity: 1;
-  }
-  1%,2% {
+	}
+	1%,2% {
 	opacity: 0;
 
-  }
-  3% {
+	}
+	3% {
 	opacity: 1;
-  }
+	}
 }
 @keyframes blinkout {
-  0% {
+	0% {
 	opacity: 1;
-  }
-  1%,2% {
+	}
+	1%,2% {
 	opacity: 0;
 
-  }
-  3% {
+	}
+	3% {
 	opacity: 1;
-  }
+	}
 }
 .logo .one,
 .logo .two ,
@@ -333,63 +333,63 @@ opacity: 1;  }
 	position: absolute;
 }
 .logo .one {
-   -webkit-animation: blinkout 5s infinite;
-   -moz-animation: blinkout 5s infinite;
-   -ms-animation: blinkout 5s infinite;
-   -o-animation: blinkout 5s infinite;
-   animation: blinkout 5s infinite;
+	-webkit-animation: blinkout 5s infinite;
+	-moz-animation: blinkout 5s infinite;
+	-ms-animation: blinkout 5s infinite;
+	-o-animation: blinkout 5s infinite;
+	animation: blinkout 5s infinite;
 }
 
 
 @-moz-keyframes blinkin {
-  0% {
+	0% {
  opacity: 0;  }
-  1%,2% {
+	1%,2% {
  opacity: 1;  }
-  3% {
+	3% {
  opacity: 0; }
 }
 @-o-keyframes blinkin {
-  0% {
+	0% {
  opacity: 0;  }
-  1%,2% {
+	1%,2% {
  opacity: 1;  }
-  3% {
+	3% {
  opacity: 0;  }
 }
 @-webkit-keyframes blinkin {
-  0% {
+	0% {
  opacity: 0; }
-  1%,2% {
+	1%,2% {
  opacity: 1;  }
-  3% {
+	3% {
  opacity: 0; }
 }
 @-ms-keyframes blinkin {
-  0% {
+	0% {
  opacity: 0;  }
-  1%,2% {
+	1%,2% {
  opacity: 1;   }
-  3% {
+	3% {
  opacity: 0; }
 }
 @keyframes blinkin {
-  0% {
+	0% {
  opacity: 0;  }
-  1%,2% {
+	1%,2% {
  opacity: 1; }
-  3% {
+	3% {
  opacity: 0;
-  }
+	}
 }
 .logo .three {
 	opacity: 0;
 	margin-top: .2em;
 	-webkit-animation: blinkin 5s infinite;
-   -moz-animation: blinkin 5s infinite;
-   -ms-animation: blinkin 5s infinite;
-   -o-animation: blinkin 5s infinite;
-   animation: blinkin 5s infinite;
+	-moz-animation: blinkin 5s infinite;
+	-ms-animation: blinkin 5s infinite;
+	-o-animation: blinkin 5s infinite;
+	animation: blinkin 5s infinite;
 }
 .instructions {
 	text-align: center;
