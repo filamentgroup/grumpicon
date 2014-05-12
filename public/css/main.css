@@ -4,11 +4,11 @@ body {
 		font-family: 'Patua One', cursive;
 }
 body {
-    background: #fefefe;
-    -webkit-transition: background .5s ease;
-    -moz-transition: background .5s ease;
-    transition: background .5s ease;
-    margin: 0;
+	background: #fefefe;
+	-webkit-transition: background .5s ease;
+	-moz-transition: background .5s ease;
+	transition: background .5s ease;
+	margin: 0;
 }
 a {
 	text-decoration:none;
@@ -19,6 +19,11 @@ a {
 }
 a:hover, a:focus {
 	 color: #111;
+}
+
+label {
+	display: inline-block;
+	width: 125px;
 }
 
 .logo {
@@ -131,6 +136,10 @@ opacity: 1;  }
 	   -webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 }
+.prefs {
+	margin-left: 2em;
+}
+
 
 @-moz-keyframes marchhup {
  0%,49.9% {
@@ -258,64 +267,64 @@ opacity: 1;  }
 
 @-moz-keyframes blinkout {
   0% {
-    opacity: 1;
+	opacity: 1;
   }
   1%,2% {
-    opacity: 0;
-    position: absolute;
-    left: -999px;
-    display: none;
+	opacity: 0;
+	position: absolute;
+	left: -999px;
+	display: none;
   }
   3% {
-    opacity: 1;
+	opacity: 1;
   }
 }
 @-o-keyframes blinkout {
   0% {
-    opacity: 1;
+	opacity: 1;
   }
   1%,2% {
-    opacity: 0;
+	opacity: 0;
   
   }
   3% {
-    opacity: 1;
+	opacity: 1;
   }
 }
 @-webkit-keyframes blinkout {
   0% {
-    opacity: 1;
+	opacity: 1;
   }
   1%,2% {
-    opacity: 0;
+	opacity: 0;
   
   }
   3% {
-    opacity: 1;
+	opacity: 1;
   }
 }
 @-ms-keyframes blinkout {
   0% {
-    opacity: 1;
+	opacity: 1;
   }
   1%,2% {
-    opacity: 0;
+	opacity: 0;
    
   }
   3% {
-    opacity: 1;
+	opacity: 1;
   }
 }
 @keyframes blinkout {
   0% {
-    opacity: 1;
+	opacity: 1;
   }
   1%,2% {
-    opacity: 0;
+	opacity: 0;
   
   }
   3% {
-    opacity: 1;
+	opacity: 1;
   }
 }
 .logo .one,
@@ -447,7 +456,7 @@ opacity: 1;  }
 	padding: .5em 1.25em .5em 1.25em;
 	margin: 0;
 }
-.wat-it-is .close {
+.wat-it-is .close, #prefs .close {
 	float: right;
 	margin-top: -1em;
 	padding-right: 1em;
@@ -472,13 +481,18 @@ opacity: 1;  }
 	font-weight:normal;
 }
 
+.new {
+	color: #f763ec;
+}
+
 #file-previews,
 #results,
-#download-btn{ display: none }
+#download-btn,
+#prefs { display: none }
 
 pre {
-    max-height: 20em;
-    overflow-y: scroll;
+	max-height: 20em;
+	overflow-y: scroll;
 }
 .page-header {
 	background-color: #f7f8f8;
@@ -506,16 +520,16 @@ pre {
 }
 
 #upload h3 {
-    text-align: center;
-    border-radius: 5px;
-    padding: 1.5em;
+	text-align: center;
+	border-radius: 5px;
+	padding: 1.5em;
 	margin-top:.5em;
 	-moz-box-shadow:    inset 0 0 20px rgba(0,0,0,.18);
 	-webkit-box-shadow: inset 0 0 20px rgba(0,0,0,.18);
 	box-shadow:         inset 0 0 20px rgba(0,0,0,.12);
-    -webkit-transition: border-color .5s ease;
-    -moz-transition: border-color .5s ease;
-    transition: border-color .5s ease;
+	-webkit-transition: border-color .5s ease;
+	-moz-transition: border-color .5s ease;
+	transition: border-color .5s ease;
 	color:#ccc;
 }
 
@@ -524,8 +538,8 @@ pre {
 .draganddrop.blobconstructor.filereader #supported { display: none }
 
 .invalid {
-    text-decoration: line-through;
-    color: #666;
+	text-decoration: line-through;
+	color: #666;
 }
 
 /* Thanks Dan Cederholm http://blog.typekit.com/2011/02/10/type-study-an-all-css-button/ */
@@ -658,8 +672,8 @@ h3 {
 	font-size:.7em;
 }
 #svg-icons-results .close {
-    float: right;
-    font-size: 1em;
+	float: right;
+	font-size: 1em;
 	margin-top: .35em;
 	padding-right: 1em;
 	color: #bbb;
@@ -670,7 +684,7 @@ h3 {
 	vertical-align:top;
 }
 
-#file-previews {
+#file-previews, #prefs {
 	background-color:#e9e9e9;
 	border: solid #ddd 1px;
 	padding: .6em 1.25em .6em 1.25em;
@@ -691,6 +705,10 @@ h3 {
 	color: #f763ec;
 }
 
+.input-box {
+	width: 50%;
+	float: left;
+}
 
 
 /* min-width:40em */
@@ -705,4 +723,3 @@ h3 {
 	}
 
 }
-/* /min-width:40em */

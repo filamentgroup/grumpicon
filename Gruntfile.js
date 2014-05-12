@@ -21,23 +21,62 @@ module.exports = function(grunt) {
 				src: ['test/**/*.js']
 			}
 		},
+		copy: {
+			build: {
+				src: 'node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/handlebars.js',
+				dest: 'public/lib/handlebars/handlebars.js',
+			}
+		},
 		requirejs: {
 			build: {
 				options: {
 					baseUrl: 'public/js',
-					mainConfigFile: 'public/js/grunticon-ui.js',
-					out: 'public/js/grunticon-ui.min.js',
-					name: 'grunticon-ui'
+					mainConfigFile: 'public/js/config.js',
+					out: 'public/dist/grumpicon.js',
+					name: 'grumpicon',
+					include: [
+						"grumpicon",
+						"countView",
+						"downloadButtonView",
+						"downloadView",
+						"listView",
+						"preferencesModel",
+						"preferencesView",
+						"resultsView",
+						"svgCollection",
+						"svgModel",
+						"toggleView",
+						"uploadView"
+					],
+					optimize: 'uglify2',
+					preserveLicenseComments: false
 				}
 			}
 		},
-		jst: {
+		handlebars: {
 			compile: {
-				options: {
-					amd: true
-				},
 				files: {
 					'public/js/templates.js': 'templates/**/*.html'
+				}
+			}
+		},
+		modernizr: {
+			build: {
+				devFile: "public/lib/modernizr/modernizr.js",
+				outputFile: "public/js/modernizr.js",
+				parseFiles: false,
+				tests: [
+					"a_download",
+					"blob-constructor",
+					"draganddrop",
+					"file_api"
+				]
+			}
+		},
+		cssmin: {
+			build: {
+				files: {
+					'public/dist/main.css': ['public/css/main.css']
 				}
 			}
 		},
@@ -65,11 +104,14 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
-	grunt.loadNpmTasks('grunt-contrib-jst');
+	grunt.loadNpmTasks('grunt-contrib-handlebars');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-modernizr');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Default task.
-	grunt.registerTask('default', ['jshint', 'nodeunit', 'jst:compile', 'requirejs:build']);
+	grunt.registerTask('default', ['jshint', 'nodeunit', 'copy', 'handlebars:compile', 'requirejs:build', 'cssmin']);
 	grunt.registerTask('test', ['nodeunit']);
 
 };
