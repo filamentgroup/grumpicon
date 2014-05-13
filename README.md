@@ -35,3 +35,7 @@ To use, check out http://www.grumpicon.com
 4. Drag svgs into the app
 
 You can also run Grunticon from the command line as part of a Grunt.js build process. More documentation is available on the [Grunticon task page](https://github.com/filamentgroup/grunticon/).
+
+### Known Issues
+
+- In Safari, the file you download is titled "Unknown." This can have ".zip" added to it and still function. This is because of Safari's lack of support for the download attribute on links (IE is also missing this attribute).
