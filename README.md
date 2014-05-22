@@ -22,6 +22,8 @@
 
 ## A web app for Grunticon, a mystical CSS icon solution.
 
+[![Filament Group](http://filamentgroup.com/images/fg-logo-positive-sm-crop.png) ](http://www.filamentgroup.com/)
+
 ### Getting Started
 
 To use, check out http://www.grumpicon.com
