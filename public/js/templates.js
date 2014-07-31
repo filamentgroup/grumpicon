@@ -149,7 +149,7 @@ function program8(depth0,data,depth1) {
     + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.prefs)),stack1 == null || stack1 === false ? stack1 : stack1.datapngcss)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\", \""
     + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.prefs)),stack1 == null || stack1 === false ? stack1 : stack1.urlpngcss)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" ] );\n		&lt;/script>\n		&lt;noscript>link href=\""
+    + "\" ] );\n		&lt;/script>\n		&lt;noscript>&lt;link href=\""
     + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.prefs)),stack1 == null || stack1 === false ? stack1 : stack1.urlpngcss)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\" rel=\"stylesheet\">&lt;/noscript>\n	&lt;/head>\n	&lt;body>\n		";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.files), {hash:{},inverse:self.noop,fn:self.programWithDepth(8, program8, data, depth0),data:data});
