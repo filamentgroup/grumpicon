@@ -226,11 +226,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (helper = helpers.urlpngcss) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.urlpngcss); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "\" ] );\n&lt;/script>\n&lt;noscript>link href=\"";
+    + "\" ] );\n&lt;/script>\n&lt;noscript>&lt;link href=\"";
   if (helper = helpers.urlpngcss) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.urlpngcss); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "\" rel=\"stylesheet\">&lt;/noscript>";
+    + "\" rel=\"stylesheet\">&lt;/noscript>\n";
   return buffer;
   });
 
