@@ -32,9 +32,10 @@ To use, check out http://www.grumpicon.com
 
 1. Clone repository: `git clone https://github.com/filamentgroup/grunticon-app`
 2. Install Dependencies: `npm install`
-2. Run the app: `node app.js`
-3. Open a browser and navigate to `localhost:5000`
-4. Drag svgs into the app
+3. Build the project: `grunt`
+4. Create a virtual host to run from the root directory
+5. Open the local url in your browser.
+6. Drag svgs into the app
 
 You can also run Grunticon from the command line as part of a Grunt.js build process. More documentation is available on the [Grunticon task page](https://github.com/filamentgroup/grunticon/).
 
