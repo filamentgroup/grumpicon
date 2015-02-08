@@ -1,62 +1,39 @@
 
 module.exports = function(grunt) {
-	'use strict';
+	"use strict";
+
+	var to5ify = require("6to5ify");
 
 	// Project configuration.
 	grunt.initConfig({
 		nodeunit: {
-			files: ['test/**/*_test.js']
+			files: ["test/**/*_test.js"]
 		},
 		jshint: {
 			options: {
-				jshintrc: '.jshintrc'
+				jshintrc: ".jshintrc"
 			},
 			gruntfile: {
-				src: 'Gruntfile.js'
+				src: "Gruntfile.js"
 			},
 			lib: {
-				src: ['lib/**/*.js']
+				src: ["lib/**/*.js"]
 			},
 			test: {
-				src: ['test/**/*.js']
-			}
-		},
-		copy: {
-			build: {
-				src: 'node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/handlebars.js',
-				dest: 'public/lib/handlebars/handlebars.js',
-			}
-		},
-		requirejs: {
-			build: {
-				options: {
-					baseUrl: 'public/js',
-					mainConfigFile: 'public/js/config.js',
-					out: 'public/dist/grumpicon.js',
-					name: 'grumpicon',
-					include: [
-						"grumpicon",
-						"countView",
-						"downloadButtonView",
-						"downloadView",
-						"listView",
-						"preferencesModel",
-						"preferencesView",
-						"resultsView",
-						"svgCollection",
-						"svgModel",
-						"toggleView",
-						"uploadView"
-					],
-					optimize: 'uglify2',
-					preserveLicenseComments: false
-				}
+				src: ["test/**/*.js"]
 			}
 		},
 		handlebars: {
 			compile: {
 				files: {
-					'public/js/templates.js': 'templates/**/*.html'
+					"public/js/templates.js": [
+						"templates/**/*",
+						"node_modules/grunt-grunticon/example/**.hbs",
+						"node_modules/grunt-grunticon/example/output/grunticon.loader.js"
+					]
+				},
+				options: {
+					commonjs: true
 				}
 			}
 		},
@@ -76,42 +53,60 @@ module.exports = function(grunt) {
 		cssmin: {
 			build: {
 				files: {
-					'public/dist/main.css': ['public/css/main.css']
+					"public/dist/main.css": ["public/css/main.css"]
+				}
+			}
+		},
+		browserify: {
+			build: {
+				files: {
+					"public/dist/grumpicon.js": "public/js/app.js"
+				},
+				options: {
+					basedir: "public/js/",
+					transform: [to5ify]
+				}
+			}
+		},
+		uglify: {
+			build: {
+				files: {
+					"public/dist/grumpicon.min.js": "public/dist/grumpicon.js"
 				}
 			}
 		},
 		watch: {
 			gruntfile: {
-				files: '<%= jshint.gruntfile.src %>',
-				tasks: ['jshint:gruntfile']
+				files: "<%= jshint.gruntfile.src %>",
+				tasks: ["jshint:gruntfile"]
 			},
 			lib: {
-				files: '<%= jshint.lib.src %>',
-				tasks: ['jshint:lib', 'nodeunit']
+				files: "<%= jshint.lib.src %>",
+				tasks: ["jshint:lib", "nodeunit"]
 			},
 			pub: {
-				files: ['public/js/**/*.js', '!public/js/grunticon-ui.min.js'],
-				tasks: [ 'default' ]
+				files: ["public/js/**/*.js", "!public/js/grunticon-ui.min.js"],
+				tasks: [ "default" ]
 			},
 			test: {
-				files: '<%= jshint.test.src %>',
-				tasks: ['jshint:test', 'nodeunit']
+				files: "<%= jshint.test.src %>",
+				tasks: ["jshint:test", "nodeunit"]
 			}
 		}
 	});
 
 	// These plugins provide necessary tasks.
-	grunt.loadNpmTasks('grunt-contrib-nodeunit');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-requirejs');
-	grunt.loadNpmTasks('grunt-contrib-handlebars');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-modernizr');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks("grunt-contrib-nodeunit");
+	grunt.loadNpmTasks("grunt-contrib-jshint");
+	grunt.loadNpmTasks("grunt-contrib-handlebars");
+	grunt.loadNpmTasks("grunt-modernizr");
+	grunt.loadNpmTasks("grunt-contrib-cssmin");
+	grunt.loadNpmTasks("grunt-contrib-uglify");
+	grunt.loadNpmTasks("grunt-browserify");
+	grunt.loadNpmTasks("grunt-contrib-watch");
 
 	// Default task.
-	grunt.registerTask('default', ['jshint', 'nodeunit', 'copy', 'handlebars:compile', 'requirejs:build', 'cssmin']);
-	grunt.registerTask('test', ['nodeunit']);
+	grunt.registerTask("default", ["jshint", "nodeunit", "handlebars:compile", "browserify:build", "uglify", "cssmin"]);
+	grunt.registerTask("test", ["nodeunit"]);
 
 };

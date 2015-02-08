@@ -23,7 +23,11 @@ a:hover, a:focus {
 
 label {
 	display: inline-block;
-	width: 125px;
+	width: 135px;
+}
+
+textarea {
+	width: 100%;
 }
 
 .logo {
@@ -480,6 +484,14 @@ opacity: 1;  }
 .dragover .drop-note h3 {
 	margin:.2em;
 	font-weight:normal;
+}
+
+.from-storage {
+	padding: 0.5em;
+	background: #ff9;
+	border-radius: 2px;
+	color: #660;
+	border: 1px solid #dd8;
 }
 
 .new {
