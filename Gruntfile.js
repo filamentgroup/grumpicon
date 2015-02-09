@@ -6,9 +6,6 @@ module.exports = function(grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
-		nodeunit: {
-			files: ["test/**/*_test.js"]
-		},
 		jshint: {
 			options: {
 				jshintrc: ".jshintrc"
@@ -82,7 +79,7 @@ module.exports = function(grunt) {
 			},
 			lib: {
 				files: "<%= jshint.lib.src %>",
-				tasks: ["jshint:lib", "nodeunit"]
+				tasks: ["jshint:lib"]
 			},
 			pub: {
 				files: ["public/js/**/*.js", "!public/js/grunticon-ui.min.js"],
@@ -90,13 +87,12 @@ module.exports = function(grunt) {
 			},
 			test: {
 				files: "<%= jshint.test.src %>",
-				tasks: ["jshint:test", "nodeunit"]
+				tasks: ["jshint:test"]
 			}
 		}
 	});
 
 	// These plugins provide necessary tasks.
-	grunt.loadNpmTasks("grunt-contrib-nodeunit");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-handlebars");
 	grunt.loadNpmTasks("grunt-modernizr");
@@ -106,7 +102,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-watch");
 
 	// Default task.
-	grunt.registerTask("default", ["jshint", "nodeunit", "handlebars:compile", "browserify:build", "uglify", "cssmin"]);
-	grunt.registerTask("test", ["nodeunit"]);
+	grunt.registerTask("default", ["jshint", "handlebars:compile", "browserify:build", "uglify", "cssmin"]);
 
 };
