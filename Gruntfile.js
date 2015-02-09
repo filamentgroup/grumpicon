@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 		copy: {
 			build: {
 				src: 'node_modules/grunt-contrib-handlebars/node_modules/handlebars/dist/handlebars.js',
-				dest: 'public/lib/handlebars/handlebars.js',
+				dest: 'public/lib/handlebars/handlebars.js'
 			}
 		},
 		requirejs: {
