@@ -103,5 +103,6 @@ module.exports = function(grunt) {
 
 	// Default task.
 	grunt.registerTask("default", ["jshint", "handlebars:compile", "browserify:build", "uglify", "cssmin"]);
+	grunt.registerTask( "stage", ["default"] );
 
 };
