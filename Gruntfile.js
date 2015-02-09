@@ -112,6 +112,7 @@ module.exports = function(grunt) {
 
 	// Default task.
 	grunt.registerTask('default', ['jshint', 'nodeunit', 'copy', 'handlebars:compile', 'requirejs:build', 'cssmin']);
+	grunt.registerTask('stage', ['default']);
 	grunt.registerTask('test', ['nodeunit']);
 
 };
