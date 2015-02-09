@@ -38,6 +38,7 @@
     "6to5ify": "^4.1.0",
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.3.0",
+    "grunt-cli": "^0.1.13",
     "grunt-contrib-cssmin": "~0.9.0",
     "grunt-contrib-handlebars": "~0.8.0",
     "grunt-contrib-jshint": "~0.1.1",
