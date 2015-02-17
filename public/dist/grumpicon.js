@@ -26109,7 +26109,7 @@ var DownloadButtonView = (function (DownloadView) {
 		initialize: {
 			value: function initialize(options) {
 				this.config = options.config;
-				_get(Object.getPrototypeOf(DownloadButtonView.prototype), "initialize", this).call(this);
+				_get(DownloadView.prototype, "initialize", this).call(this);
 
 				this.listenTo(this.config, "change", this.render);
 			},
@@ -26133,7 +26133,7 @@ var DownloadButtonView = (function (DownloadView) {
 					zip.file(data.datasvgcss, $("#svg-css-results").text());
 					zip.file(data.datapngcss, $("#png-css-results").text());
 					zip.file(data.urlpngcss, $("#fallback-css-results").text());
-					zip.file(data.loadersnippet, JST["templates/script-html.html"](data));
+					zip.file(data.loadersnippet, $("#js-results").text());
 					zip.file("preview.html", _.unescape($("#preview-html").html()));
 
 					if (Modernizr.adownload && (window.URL && window.URL.createObjectURL)) {
@@ -26546,7 +26546,7 @@ var ResultsView = (function (BaseView) {
 				var collection = this.collection;
 				var embedText = JST["node_modules/grunt-grunticon/example/output/grunticon.loader.js"]();
 
-				_get(Object.getPrototypeOf(ResultsView.prototype), "render", this).call(this);
+				_get(BaseView.prototype, "render", this).call(this);
 
 				new CSSPreviewView({
 					el: "#svg-css-results",
@@ -26935,7 +26935,7 @@ module.exports = function (Handlebars) {
         escapeExpression = this.escapeExpression;
 
 
-    buffer += "\t\t\n\t\t<pre><code>";
+    buffer += "\t\t\r\n\t\t<pre><code>";
     if (helper = helpers.cssprefix) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
@@ -26971,7 +26971,7 @@ module.exports = function (Handlebars) {
     } else {
       helper = depth0 && depth0.height;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "px\"></div><hr/>\n";
+    buffer += escapeExpression(stack1) + "px\"></div><hr/>\r\n";
     return buffer;
   });
 
@@ -26985,31 +26985,31 @@ module.exports = function (Handlebars) {
         escapeExpression = this.escapeExpression;
 
 
-    buffer += "<h3>Export Preview</h3>\n\n<h4>";
+    buffer += "<h3>Export Preview</h3>\r\n\r\n<h4>";
     if (helper = helpers.datasvgcss) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.datasvgcss;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "</h4>\n<pre id=\"svg-css-results\"></pre>\n\n<h4>";
+    buffer += escapeExpression(stack1) + "</h4>\r\n<pre id=\"svg-css-results\"></pre>\r\n\r\n<h4>";
     if (helper = helpers.datapngcss) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.datapngcss;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "</h4>\n<pre id=\"png-css-results\"></pre>\n\n<h4>";
+    buffer += escapeExpression(stack1) + "</h4>\r\n<pre id=\"png-css-results\"></pre>\r\n\r\n<h4>";
     if (helper = helpers.urlpngcss) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.urlpngcss;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "</h4>\n<pre id=\"fallback-css-results\"></pre>\n\n<h4>";
+    buffer += escapeExpression(stack1) + "</h4>\r\n<pre id=\"fallback-css-results\"></pre>\r\n\r\n<h4>";
     if (helper = helpers.loadersnippet) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.loadersnippet;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "</h4>\n<pre id=\"js-results\"></pre>\n\n<h4>preview.html</h4>\n<pre id=\"preview-html\"></pre>";
+    buffer += escapeExpression(stack1) + "</h4>\r\n<pre id=\"js-results\"></pre>\r\n\r\n<h4>preview.html</h4>\r\n<pre id=\"preview-html\"></pre>";
     return buffer;
   });
 
@@ -27028,7 +27028,7 @@ module.exports = function (Handlebars) {
     function program1(depth0, data) {
 
 
-      return "\n\t<p class=\"from-storage\">Grumpiconfig saved in <code>localStorage</code>. <a href=\"#\" class=\"reset\">Reset to factory setting</a>.</p>\n";
+      return "\r\n\t<p class=\"from-storage\">Grumpiconfig saved in <code>localStorage</code>. <a href=\"#\" class=\"reset\">Reset to factory setting</a>.</p>\r\n";
     }
 
     buffer += "<div class=\"input-box\"><label>datasvgcss</label> <input type=\"text\" name=\"datasvgcss\" value=\"";
@@ -27037,60 +27037,60 @@ module.exports = function (Handlebars) {
     } else {
       helper = depth0 && depth0.datasvgcss;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "\" /></div>\n<div class=\"input-box\"><label>datapngcss</label> <input type=\"text\" name=\"datapngcss\" value=\"";
+    buffer += escapeExpression(stack1) + "\" /></div>\r\n<div class=\"input-box\"><label>datapngcss</label> <input type=\"text\" name=\"datapngcss\" value=\"";
     if (helper = helpers.datapngcss) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.datapngcss;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "\" /></div>\n<div class=\"input-box\"><label>urlpngcss</label> <input type=\"text\" name=\"urlpngcss\" value=\"";
+    buffer += escapeExpression(stack1) + "\" /></div>\r\n<div class=\"input-box\"><label>urlpngcss</label> <input type=\"text\" name=\"urlpngcss\" value=\"";
     if (helper = helpers.urlpngcss) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.urlpngcss;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "\" /></div>\n<div class=\"input-box\"><label>previewhtml</label> <input type=\"text\" name=\"previewhtml\" value=\"";
+    buffer += escapeExpression(stack1) + "\" /></div>\r\n<div class=\"input-box\"><label>previewhtml</label> <input type=\"text\" name=\"previewhtml\" value=\"";
     if (helper = helpers.previewhtml) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.previewhtml;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "\" /></div>\n<div class=\"input-box\"><label>loadersnippet</label> <input type=\"text\" name=\"loadersnippet\" value=\"";
+    buffer += escapeExpression(stack1) + "\" /></div>\r\n<div class=\"input-box\"><label>loadersnippet</label> <input type=\"text\" name=\"loadersnippet\" value=\"";
     if (helper = helpers.loadersnippet) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.loadersnippet;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "\" /></div>\n<div class=\"input-box\"><label>customselectors</label> <input type=\"text\" name=\"customselectors\" value=\"" + escapeExpression((helper = helpers.json || depth0 && depth0.json, options = { hash: {}, data: data }, helper ? helper.call(depth0, depth0 && depth0.customselectors, options) : helperMissing.call(depth0, "json", depth0 && depth0.customselectors, options))) + "\" /></div>\n<div class=\"input-box\"><label>cssprefix</label> <input type=\"text\" name=\"cssprefix\" value=\"";
+    buffer += escapeExpression(stack1) + "\" /></div>\r\n<div class=\"input-box\"><label>customselectors</label> <input type=\"text\" name=\"customselectors\" value=\"" + escapeExpression((helper = helpers.json || depth0 && depth0.json, options = { hash: {}, data: data }, helper ? helper.call(depth0, depth0 && depth0.customselectors, options) : helperMissing.call(depth0, "json", depth0 && depth0.customselectors, options))) + "\" /></div>\r\n<div class=\"input-box\"><label>cssprefix</label> <input type=\"text\" name=\"cssprefix\" value=\"";
     if (helper = helpers.cssprefix) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.cssprefix;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "\" /></div>\n<div class=\"input-box\"><label>colors<a href=\"#color-note\">*</a></label> <input type=\"text\" name=\"colors\" value=\"" + escapeExpression((helper = helpers.json || depth0 && depth0.json, options = { hash: {}, data: data }, helper ? helper.call(depth0, depth0 && depth0.colors, options) : helperMissing.call(depth0, "json", depth0 && depth0.colors, options))) + "\" /></div>\n<div class=\"input-box\"><label>dynamicColorOnly</label> <input type=\"text\" name=\"dynamicColorOnly\" value=\"" + escapeExpression((helper = helpers.json || depth0 && depth0.json, options = { hash: {}, data: data }, helper ? helper.call(depth0, depth0 && depth0.dynamicColorOnly, options) : helperMissing.call(depth0, "json", depth0 && depth0.dynamicColorOnly, options))) + "\" /></div>\n<div class=\"input-box\"><label>pngfolder</label> <input type=\"text\" name=\"pngfolder\" value=\"";
+    buffer += escapeExpression(stack1) + "\" /></div>\r\n<div class=\"input-box\"><label>colors<a href=\"#color-note\">*</a></label> <input type=\"text\" name=\"colors\" value=\"" + escapeExpression((helper = helpers.json || depth0 && depth0.json, options = { hash: {}, data: data }, helper ? helper.call(depth0, depth0 && depth0.colors, options) : helperMissing.call(depth0, "json", depth0 && depth0.colors, options))) + "\" /></div>\r\n<div class=\"input-box\"><label>dynamicColorOnly</label> <input type=\"text\" name=\"dynamicColorOnly\" value=\"" + escapeExpression((helper = helpers.json || depth0 && depth0.json, options = { hash: {}, data: data }, helper ? helper.call(depth0, depth0 && depth0.dynamicColorOnly, options) : helperMissing.call(depth0, "json", depth0 && depth0.dynamicColorOnly, options))) + "\" /></div>\r\n<div class=\"input-box\"><label>pngfolder</label> <input type=\"text\" name=\"pngfolder\" value=\"";
     if (helper = helpers.pngfolder) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.pngfolder;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "\" /></div>\n<div class=\"input-box\"><label>pngpath</label> <input type=\"text\" name=\"pngpath\" value=\"";
+    buffer += escapeExpression(stack1) + "\" /></div>\r\n<div class=\"input-box\"><label>pngpath</label> <input type=\"text\" name=\"pngpath\" value=\"";
     if (helper = helpers.pngpath) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.pngpath;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "\" /></div>\n\n<div style=\"clear:both\"></div>\n\n<label>template</label>\n<textarea name=\"template\"rows=\"5\">";
+    buffer += escapeExpression(stack1) + "\" /></div>\r\n\r\n<div style=\"clear:both\"></div>\r\n\r\n<label>template</label>\r\n<textarea name=\"template\"rows=\"5\">";
     if (helper = helpers.template) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.template;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "</textarea>\n\n\n<div style=\"clear:both\"></div>\n\n";
+    buffer += escapeExpression(stack1) + "</textarea>\r\n\r\n\r\n<div style=\"clear:both\"></div>\r\n\r\n";
     stack1 = helpers["if"].call(depth0, depth0 && depth0.fromStorage, { hash: {}, inverse: self.noop, fn: self.program(1, program1, data), data: data });
     if (stack1 || stack1 === 0) {
       buffer += stack1;
     }
-    buffer += "\n\n<p>See the <a href=\"https://github.com/filamentgroup/grunticon#options\">grunticon options</a> for the deets.</p>\n<p id=\"color-note\"><small>* colors must be set before dropping SVGs.</small></p>\n\n<a href=\"#close\" class=\"close\" title=\"Close\">Close</a>";
+    buffer += "\r\n\r\n<p>See the <a href=\"https://github.com/filamentgroup/grunticon#options\">grunticon options</a> for the deets.</p>\r\n<p id=\"color-note\"><small>* colors must be set before dropping SVGs.</small></p>\r\n\r\n<a href=\"#close\" class=\"close\" title=\"Close\">Close</a>";
     return buffer;
   });
 
@@ -27104,7 +27104,7 @@ module.exports = function (Handlebars) {
         escapeExpression = this.escapeExpression;
 
 
-    buffer += "&lt;script>\n/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */\nwindow.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.createElementNS||!t.document.createElementNS(\"http://www.w3.org/2000/svg\",\"svg\").createSVGRect||!document.implementation.hasFeature(\"http://www.w3.org/TR/SVG11/feature#Image\",\"1.1\")||window.opera&&-1===navigator.userAgent.indexOf(\"Chrome\")),o=function(o){var r=t.document.createElement(\"link\"),a=t.document.getElementsByTagName(\"script\")[0];r.rel=\"stylesheet\",r.href=e[o&&n?0:o?1:2],a.parentNode.insertBefore(r,a)},r=new t.Image;r.onerror=function(){o(!1)},r.onload=function(){o(1===r.width&&1===r.height)},r.src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\"}};\ngrunticon( [ \"";
+    buffer += "&lt;script>\r\n/* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */\r\nwindow.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.createElementNS||!t.document.createElementNS(\"http://www.w3.org/2000/svg\",\"svg\").createSVGRect||!document.implementation.hasFeature(\"http://www.w3.org/TR/SVG11/feature#Image\",\"1.1\")||window.opera&&-1===navigator.userAgent.indexOf(\"Chrome\")),o=function(o){var r=t.document.createElement(\"link\"),a=t.document.getElementsByTagName(\"script\")[0];r.rel=\"stylesheet\",r.href=e[o&&n?0:o?1:2],a.parentNode.insertBefore(r,a)},r=new t.Image;r.onerror=function(){o(!1)},r.onload=function(){o(1===r.width&&1===r.height)},r.src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\"}};\r\ngrunticon( [ \"";
     if (helper = helpers.datasvgcss) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
@@ -27122,13 +27122,13 @@ module.exports = function (Handlebars) {
     } else {
       helper = depth0 && depth0.urlpngcss;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "\" ] );\n&lt;/script>\n&lt;noscript>&lt;link href=\"";
+    buffer += escapeExpression(stack1) + "\" ] );\r\n&lt;/script>\r\n&lt;noscript>&lt;link href=\"";
     if (helper = helpers.urlpngcss) {
       stack1 = helper.call(depth0, { hash: {}, data: data });
     } else {
       helper = depth0 && depth0.urlpngcss;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
     }
-    buffer += escapeExpression(stack1) + "\" rel=\"stylesheet\">&lt;/noscript>\n";
+    buffer += escapeExpression(stack1) + "\" rel=\"stylesheet\">&lt;/noscript>\r\n";
     return buffer;
   });
 
@@ -27145,25 +27145,25 @@ module.exports = function (Handlebars) {
       var buffer = "",
           stack1,
           helper;
-      buffer += "\n<div>\n\t<div class=\"meta\">\n\t\t<h5>";
+      buffer += "\r\n<div>\r\n\t<div class=\"meta\">\r\n\t\t<h5>";
       if (helper = helpers.name) {
         stack1 = helper.call(depth0, { hash: {}, data: data });
       } else {
         helper = depth0 && depth0.name;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
       }
-      buffer += escapeExpression(stack1) + "</h5>\n\t\t<p>" + escapeExpression((stack1 = (stack1 = depth0 && depth0.file, stack1 == null || stack1 === false ? stack1 : stack1.size), typeof stack1 === functionType ? stack1.apply(depth0) : stack1)) + " bytes<p>\n\t</div>\n\t<img src=\"";
+      buffer += escapeExpression(stack1) + "</h5>\r\n\t\t<p>" + escapeExpression((stack1 = (stack1 = depth0 && depth0.file, stack1 == null || stack1 === false ? stack1 : stack1.size), typeof stack1 === functionType ? stack1.apply(depth0) : stack1)) + " bytes<p>\r\n\t</div>\r\n\t<img src=\"";
       if (helper = helpers.svgDataUri) {
         stack1 = helper.call(depth0, { hash: {}, data: data });
       } else {
         helper = depth0 && depth0.svgDataUri;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
       }
-      buffer += escapeExpression(stack1) + "\" alt=\"\" />\n\t<a href='#close' class='close' title='Remove file' data-file='";
+      buffer += escapeExpression(stack1) + "\" alt=\"\" />\r\n\t<a href='#close' class='close' title='Remove file' data-file='";
       if (helper = helpers.id) {
         stack1 = helper.call(depth0, { hash: {}, data: data });
       } else {
         helper = depth0 && depth0.id;stack1 = typeof helper === functionType ? helper.call(depth0, { hash: {}, data: data }) : helper;
       }
-      buffer += escapeExpression(stack1) + "'>Remove</a>\n</div>\n";
+      buffer += escapeExpression(stack1) + "'>Remove</a>\r\n</div>\r\n";
       return buffer;
     }
 
@@ -27171,7 +27171,7 @@ module.exports = function (Handlebars) {
     if (stack1 || stack1 === 0) {
       buffer += stack1;
     }
-    buffer += "\n";
+    buffer += "\r\n";
     return buffer;
   });
 
@@ -27505,7 +27505,7 @@ module.exports = function (Handlebars) {
 
 
 
-    return "/*! grunt-grunticon Stylesheet Loader - v2.1.2 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */\n\n(function(e){function t(t,n,r,o){\"use strict\";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||\"all\":setTimeout(a)}var i=e.document.createElement(\"link\"),l=n||e.document.getElementsByTagName(\"script\")[0],u=e.document.styleSheets;return i.rel=\"stylesheet\",i.href=t,i.media=\"only x\",i.onload=o||null,l.parentNode.insertBefore(i,l),a(),i}var n=function(r,o){\"use strict\";if(r&&3===r.length){var a=e.navigator,i=e.Image,l=!(!document.createElementNS||!document.createElementNS(\"http://www.w3.org/2000/svg\",\"svg\").createSVGRect||!document.implementation.hasFeature(\"http://www.w3.org/TR/SVG11/feature#Image\",\"1.1\")||e.opera&&-1===a.userAgent.indexOf(\"Chrome\")||-1!==a.userAgent.indexOf(\"Series40\")),u=new i;u.onerror=function(){n.method=\"png\",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&l?0:e?1:2];n.method=e&&l?\"svg\":e?\"datapng\":\"png\",n.href=a,t(a,null,null,o)},u.src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\",document.documentElement.className+=\" grunticon\"}};n.loadCSS=t,e.grunticon=n})(this);(function(e,t){\"use strict\";var n=t.document,r=\"grunticon:\",o=function(e){if(n.attachEvent?\"complete\"===n.readyState:\"loading\"!==n.readyState)e();else{var t=!1;n.addEventListener(\"readystatechange\",function(){t||(t=!0,e())},!1)}},a=function(e){return t.document.querySelector('link[href$=\"'+e+'\"]')},c=function(e){var t,n,o,a,c,i,u={};if(t=e.sheet,!t)return u;n=t.cssRules?t.cssRules:t.rules;for(var l=0;n.length>l;l++)o=n[l].cssText,a=r+n[l].selectorText,c=o.split(\");\")[0].match(/US\\-ASCII\\,([^\"']+)/),c&&c[1]&&(i=decodeURIComponent(c[1]),u[a]=i);return u},i=function(e){var t,o,a;o=\"data-grunticon-embed\";for(var c in e)if(a=c.slice(r.length),t=n.querySelectorAll(a+\"[\"+o+\"]\"),t.length)for(var i=0;t.length>i;i++)t[i].innerHTML=e[c],t[i].style.backgroundImage=\"none\",t[i].removeAttribute(o);return t},u=function(t){\"svg\"===e.method&&o(function(){i(c(a(e.href))),\"function\"==typeof t&&t()})};e.embedIcons=i,e.getCSS=a,e.getIcons=c,e.ready=o,e.svgLoadedCallback=u,e.embedSVG=u})(grunticon,this);";
+    return "/*! grunt-grunticon Stylesheet Loader - v2.1.1 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */\n\n(function(e){function t(t,n,r,o){\"use strict\";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||\"all\":setTimeout(a)}var i=e.document.createElement(\"link\"),c=n||e.document.getElementsByTagName(\"script\")[0],u=e.document.styleSheets;return i.rel=\"stylesheet\",i.href=t,i.media=\"only x\",i.onload=o||function(){},c.parentNode.insertBefore(i,c),a(),i}var n=function(r,o){\"use strict\";if(r&&3===r.length){var a=e.navigator,i=e.Image,c=!(!document.createElementNS||!document.createElementNS(\"http://www.w3.org/2000/svg\",\"svg\").createSVGRect||!document.implementation.hasFeature(\"http://www.w3.org/TR/SVG11/feature#Image\",\"1.1\")||e.opera&&-1===a.userAgent.indexOf(\"Chrome\")||-1!==a.userAgent.indexOf(\"Series40\")),u=new i;u.onerror=function(){n.method=\"png\",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&c?0:e?1:2];n.method=e&&c?\"svg\":e?\"datapng\":\"png\",n.href=a,t(a,null,null,o)},u.src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\",document.documentElement.className+=\" grunticon\"}};n.loadCSS=t,e.grunticon=n})(this);(function(e,t){\"use strict\";var n=t.document,r=\"grunticon:\",o=function(e){if(n.attachEvent?\"complete\"===n.readyState:\"loading\"!==n.readyState)e();else{var t=!1;n.addEventListener(\"readystatechange\",function(){t||(t=!0,e())},!1)}},a=function(e){return t.document.querySelector('link[href$=\"'+e+'\"]')},c=function(e){var t,n,o,a,c,i,u={};if(t=e.sheet,!t)return u;n=t.cssRules?t.cssRules:t.rules;for(var s=0;n.length>s;s++)o=n[s].cssText,a=r+n[s].selectorText,c=o.split(\");\")[0].match(/US\\-ASCII\\,([^\"']+)/),c&&c[1]&&(i=decodeURIComponent(c[1]),u[a]=i);return u},i=function(e){var t,o,a;o=\"data-grunticon-embed\";for(var c in e)if(a=c.slice(r.length),t=n.querySelectorAll(a+\"[\"+o+\"]\"),t.length)for(var i=0;t.length>i;i++)t[i].innerHTML=e[c],t[i].style.backgroundImage=\"none\",t[i].removeAttribute(o);return t},u=function(t){\"svg\"===e.method&&o(function(){i(c(a(e.href))),\"function\"==typeof t&&t()})};e.embedIcons=i,e.getCSS=a,e.getIcons=c,e.ready=o,e.svgLoadedCallback=u,e.embedSVG=u})(grunticon,this);";
   });
 
   return this.JST;

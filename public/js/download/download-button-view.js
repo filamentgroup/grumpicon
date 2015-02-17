@@ -40,7 +40,7 @@ export default class DownloadButtonView extends DownloadView {
 			zip.file(data.datasvgcss, $("#svg-css-results").text());
 			zip.file(data.datapngcss, $("#png-css-results").text());
 			zip.file(data.urlpngcss, $("#fallback-css-results").text());
-			zip.file(data.loadersnippet, JST["templates/script-html.html"](data));
+			zip.file(data.loadersnippet, $("#js-results").text());
 			zip.file("preview.html", _.unescape($("#preview-html").html()));
 
 			if( Modernizr.adownload && ( window.URL && window.URL.createObjectURL ) ){
