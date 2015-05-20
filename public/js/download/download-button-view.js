@@ -53,7 +53,7 @@ export default class DownloadButtonView extends DownloadView {
 			} else {
 				let blob = zip.generate();
 
-				link.on("click", e => {
+				$link.on("click", e => {
 					e.preventDefault();
 					location.href = ZIP_URI_PREFIX + blob;
 				});

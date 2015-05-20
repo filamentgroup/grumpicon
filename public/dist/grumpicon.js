@@ -26462,7 +26462,7 @@ var DownloadButtonView = (function (DownloadView) {
 						(function () {
 							var blob = zip.generate();
 
-							link.on("click", function (e) {
+							$link.on("click", function (e) {
 								e.preventDefault();
 								location.href = ZIP_URI_PREFIX + blob;
 							});
