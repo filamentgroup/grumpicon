@@ -9,7 +9,9 @@ export default class UploadView extends View {
 		this.events = {
 			"drop": "fileDrop",
 			"dragover": "highlight",
-			"dragleave": "highlightOff"
+			"dragleave": "highlightOff",
+			"click #upload-btn": "fileUploadBtnClick",
+			"change #upload": "fileUpload"
 		};
 	}
 
@@ -42,5 +44,16 @@ export default class UploadView extends View {
 	/** Turn off the highlight when a file is dropped or the dragged off */
 	highlightOff() {
 		this.$("body").removeClass("dragover");
+	}
+
+	/** trigger a click on the actual file input */
+	fileUploadBtnClick(e) {
+		e.preventDefault();
+		this.$("#upload").click();
+	}
+
+	/** take the files uploaded and add them to the collection */
+	fileUpload(e) {
+		this.addFiles(e.target.files);
 	}
 }

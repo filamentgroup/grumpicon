@@ -408,6 +408,11 @@ opacity: 1;  }
 	padding-top: 1em;
 	overflow: visible;
 }
+.click-2-upload {
+	display: block;
+	font-size: 85%;
+	text-align: center;
+}
 .by {
 	font-family: arial, san-serif;
 	font-size: .8em;
